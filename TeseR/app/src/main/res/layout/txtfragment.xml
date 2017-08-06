@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#288396">
+
+    <TextView
+        android:id="@+id/mTxt_1"
+        android:layout_width="80dp"
+        android:layout_height="100dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_margin="10dp"
+        android:background="@mipmap/s2"
+        android:gravity="center_horizontal"
+        android:text="收"
+        android:textColor="#fff"
+        android:textSize="65dp" />
+
+    <TextView
+        android:id="@+id/mTxt_2"
+        android:scrollbars="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:layout_marginLeft="10dp"
+        android:layout_toRightOf="@id/mTxt_1"
+        android:text="shou"
+        android:textColor="#fff"
+        android:textSize="30dp" />
+
+    <ImageView
+        android:id="@+id/mBtn_txtshow"
+        android:clickable="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/mTxt_2"
+        android:layout_alignLeft="@id/mTxt_2"
+        android:layout_toRightOf="@id/mTxt_1"
+        android:src="@mipmap/laba"
+        android:onClick="onClick" />
+
+    <ImageView
+        android:id="@+id/img1"
+        android:clickable="true"
+        android:layout_marginRight="5dp"
+        android:layout_alignTop="@id/mTxt_2"
+        android:layout_alignBottom="@id/mTxt_2"
+        android:layout_alignParentRight="true"
+        android:src="@mipmap/up"
+        android:onClick="onClick"
+        android:layout_width="30dp"
+        android:layout_height="30dp" />
+
+    <ImageView
+        android:id="@+id/img2"
+        android:clickable="true"
+        android:layout_below="@id/img1"
+        android:layout_marginTop="5dp"
+        android:layout_alignLeft="@id/img1"
+        android:layout_alignRight="@id/img1"
+        android:src="@mipmap/next"
+        android:onClick="onClick"
+        android:layout_width="30dp"
+        android:layout_height="30dp" />
+
+    <TextView
+        android:id="@+id/mTxt_3"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@id/mTxt_1"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:text="基本解释:"
+        android:textColor="#fff"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/mTxt_4"
+        android:scrollbars="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/mTxt_3"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp"
+        android:text="事实上是是是是是"
+        android:textColor="#fff"
+        android:textSize="16sp" />
+</RelativeLayout>
