@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Color;
+import android.os.SystemClock;
 import android.support.annotation.NonNull;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
@@ -55,6 +56,7 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 
 import static android.R.attr.data;
+import static android.R.attr.visible;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -67,15 +69,16 @@ public class MainActivity extends AppCompatActivity {
     private Retrofit retrofit;
     private Bundle bundle;
     private File file = null;
-    private ImageView mImg1,mImg2;
+    private ImageView mImg1, mImg2;
     private RelativeLayout myrl;
     private int up = 1;
     private int down = 1;
-    private TextView mTxt1,mTxt2,mTxt3,mTxt4;
+    private int pos = 1;
+    private TextView mTxt1, mTxt2, mTxt3, mTxt4;
 
-    private ImageView mBtn_second,img1,img2;
+    private ImageView mBtn_second, img1, img2;
     private SpeechSynthesizer ss;
-    private HashMap<String,Integer> map;
+    private HashMap<String, Integer> map;
 
 
     @Override
@@ -87,7 +90,7 @@ public class MainActivity extends AppCompatActivity {
         SpeechUtility.createUtility(this, SpeechConstant.APPID + "=59658cec");
         myrl = (RelativeLayout) findViewById(R.id.myrl);
         initView();
-        ss=SpeechSynthesizer.createSynthesizer(this,null);
+        ss = SpeechSynthesizer.createSynthesizer(this, null);
     }
 
 
@@ -119,32 +122,29 @@ public class MainActivity extends AppCompatActivity {
                 break;
 
             case R.id.img4://上一页
-                Integer pos = map.get("pos");
 
-                if (pos-up>0&&pos-up<=mDatas.size()){
-                    String s1 = mDatas.get(pos - up);
-                    up=up-1;
-                    initData(s1);
+                pos--;
+                if (pos > 0 && pos < mDatas.size()) {
+                    String s3 = mDatas.get(pos);
+                    initData(s3);
+
                 }
 
                 break;
 
             case R.id.img2://下一页
-                Integer pos1 = map.get("pos");
 
-                if (pos1+down>0&&pos1+down<=mDatas.size()){
-                    String s2 = mDatas.get(pos1 + down);
-                    down = down+1;
-                    initData(s2);
+                pos++;
+                if (pos > 0 && pos < mDatas.size()) {
+                    String s3 = mDatas.get(pos);
+                    initData(s3);
                 }
 
                 break;
 
 
-
         }
     }
-
 
 
     @Override
@@ -153,11 +153,10 @@ public class MainActivity extends AppCompatActivity {
 
         if (resultCode == Activity.RESULT_OK) {
 
-            String contentType=intent.getStringExtra(CameraActivity.KEY_CONTENT_TYPE);
+            String contentType = intent.getStringExtra(CameraActivity.KEY_CONTENT_TYPE);
             String filePath = FileUtil.getSaveFile(getApplicationContext()).getAbsolutePath();
-
+            mImg1.setVisibility(View.INVISIBLE);
             if (CameraActivity.CONTENT_TYPE_GENERAL.equals(contentType)) {
-
                 GeneralParams param = new GeneralParams();
                 param.setDetectDirection(true);
                 param.setImageFile(new File(filePath));
@@ -180,26 +179,27 @@ public class MainActivity extends AppCompatActivity {
                         for (int i = 0; i < sb.length(); i++) {
                             char c = sb.charAt(i);
 
-                           if(isGB2312(String.valueOf(c))) {
-                               mDatas.add(String.valueOf(c));
-                           }
+                            if (isGB2312(String.valueOf(c))) {
+                                mDatas.add(String.valueOf(c));
+                            }
                         }
 
+                        Log.i("dd", "onResult: " + mDatas.toString());
                         gridLayoutManager = new GridLayoutManager(MainActivity.this, 3, GridLayoutManager.VERTICAL, false);
                         mRecyclerView.setLayoutManager(gridLayoutManager);
                         mRecyclerView.setAdapter(mAdapter);
                         mAdapter.notifyDataSetChanged();
 
                         mRecyclerView.setVisibility(View.VISIBLE);
-                        mImg1.setVisibility(View.GONE);
                         mAdapter.setOnItemClickListener(new LikeListAdapter.OnItemClickListener() {
 
                             @Override
-                            public void onItemClick(int pos, View view) {
-                                String s = mDatas.get(pos);
-                                map = new HashMap<String, Integer>();
-                                map.put("pos",pos);
+                            public void onItemClick(int pos1, View view) {
+                                String s = mDatas.get(pos1);
+                                pos = pos1;
                                 initData(s);
+                                myrl.setVisibility(View.VISIBLE);
+//                                img1.setVisibility(View.GONE);
                             }
                         });
                     }
@@ -255,15 +255,17 @@ public class MainActivity extends AppCompatActivity {
 
     private void initView() {
         mRecyclerView = (RecyclerView) findViewById(R.id.recycler_view);
-        mImg2  = (ImageView) findViewById(R.id.img1);
+        mImg2 = (ImageView) findViewById(R.id.img2);
+        mImg1 = (ImageView) findViewById(R.id.img1);
+
         file = new File(getFilesDir(), "pic.jpg");
         getBaidiToken();
         mAdapter = new LikeListAdapter(this, mDatas);
 
-        mTxt1 = (TextView)findViewById(R.id.mTxt_1);
-        mTxt2 = (TextView)findViewById(R.id.mTxt_2);
-        mTxt3 = (TextView)findViewById(R.id.mTxt_3);
-        mTxt4 = (TextView)findViewById(R.id.mTxt_4);
+        mTxt1 = (TextView) findViewById(R.id.mTxt_1);
+        mTxt2 = (TextView) findViewById(R.id.mTxt_2);
+        mTxt3 = (TextView) findViewById(R.id.mTxt_3);
+        mTxt4 = (TextView) findViewById(R.id.mTxt_4);
 
         mTxt2.setMovementMethod(ScrollingMovementMethod.getInstance());
         mTxt4.setMovementMethod(ScrollingMovementMethod.getInstance());
@@ -272,7 +274,7 @@ public class MainActivity extends AppCompatActivity {
     //请求获取字典词条信息
     private void initData(String text) {
 
-        if (!isGB2312(text)){
+        if (!isGB2312(text)) {
             Toast.makeText(this, "只能查询汉字", Toast.LENGTH_SHORT).show();
             return;
         }
@@ -292,13 +294,22 @@ public class MainActivity extends AppCompatActivity {
                     String zi = GsonResult.getZi(s);
                     String pinYin = GsonResult.getPinYin(s);
                     String xiangJie = GsonResult.getXiangJie(s);
+                    StringBuffer b = new StringBuffer();
+                    String[] split = pinYin.split(",");
+                    String s78=null;
+
+                    for (int i = 0; i < split.length; i++) {
+                       s78 = b.append(pinYin).toString()+"\n";
+                    }
+
+                    Log.i("dd", "onResponse: "+s78);
 
                     mTxt1.setText(zi);
-                    mTxt2.setText(pinYin);
+                    mTxt2.setText(b.toString());
                     mTxt4.setText(xiangJie);
                     myrl.setVisibility(View.VISIBLE);
                     mRecyclerView.setVisibility(View.INVISIBLE);
-
+                    textToVoice(zi);
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
@@ -318,12 +329,13 @@ public class MainActivity extends AppCompatActivity {
                 // 调用成功，返回AccessToken对象
                 String token = result.getAccessToken();
             }
+
             @Override
             public void onError(final OCRError error) {
                 runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
-                        Toast.makeText(MainActivity.this, "获取Token失败"+error.toString(), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(MainActivity.this, "获取Token失败" + error.toString(), Toast.LENGTH_SHORT).show();
                     }
                 });
 
@@ -333,9 +345,9 @@ public class MainActivity extends AppCompatActivity {
 
     //语音合成
     private void textToVoice(String text) {
-        ss.setParameter(SpeechConstant.SPEED,"5");
-        ss.setParameter(SpeechConstant.VOLUME,"100");
-        ss.setParameter(SpeechConstant.VOICE_NAME,"nannan");
+        ss.setParameter(SpeechConstant.SPEED, "25");
+        ss.setParameter(SpeechConstant.VOLUME, "100");
+        ss.setParameter(SpeechConstant.VOICE_NAME, "nannan");
         ss.startSpeaking(text, new SynthesizerListener() {
             @Override
             public void onSpeakBegin() {
@@ -372,7 +384,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
-
 
 
 }
