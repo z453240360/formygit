@@ -299,7 +299,10 @@ public class MainActivity extends AppCompatActivity {
                     String s78=null;
 
                     for (int i = 0; i < split.length; i++) {
-                       s78 = b.append(pinYin).toString()+"\n";
+
+                        String s1 = split[i].toString();
+
+                        s78 = b.append(s1+"\n").toString();
                     }
 
                     Log.i("dd", "onResponse: "+s78);

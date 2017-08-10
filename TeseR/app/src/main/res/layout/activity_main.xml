@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@mipmap/b1"
+    android:fitsSystemWindows="true"
     tools:context="com.example.administrator.teser.MainActivity">
 
     <ImageView
@@ -14,6 +15,18 @@
         android:layout_centerHorizontal="true"
         android:scaleType="fitXY"
         android:src="@mipmap/bacg" />
+
+    <!--非华为手机 -->
+    <!--<ImageView-->
+        <!--android:id="@+id/img1"-->
+        <!--android:visibility="visible"-->
+        <!--android:layout_width="202dp"-->
+        <!--android:layout_height="250dp"-->
+        <!--android:layout_centerHorizontal="true"-->
+        <!--android:layout_marginTop="125dp"-->
+        <!--android:scaleType="fitXY"-->
+        <!--android:src="@mipmap/tc" />-->
+
 
     <ImageView
         android:id="@+id/img1"
