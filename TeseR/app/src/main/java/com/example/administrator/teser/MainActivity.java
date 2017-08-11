@@ -87,10 +87,15 @@ public class MainActivity extends AppCompatActivity {
         ColorState.setWindowStatusBarColor(this, Color.BLACK);
         supportRequestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_main);
+
         SpeechUtility.createUtility(this, SpeechConstant.APPID + "=59658cec");
         myrl = (RelativeLayout) findViewById(R.id.myrl);
         initView();
         ss = SpeechSynthesizer.createSynthesizer(this, null);
+
+        int widthPixels = getResources().getDisplayMetrics().widthPixels;
+        int heightPixels = getResources().getDisplayMetrics().heightPixels;
+        Toast.makeText(this, ""+widthPixels+heightPixels, Toast.LENGTH_SHORT).show();
     }
 
 

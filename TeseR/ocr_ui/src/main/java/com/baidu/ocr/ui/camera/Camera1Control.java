@@ -320,6 +320,7 @@ public class Camera1Control implements ICameraControl {
             if (parameters == null) {
                 parameters = camera.getParameters();
                 parameters.setFocusMode(Camera.Parameters.FOCUS_MODE_CONTINUOUS_PICTURE);
+//                parameters.setFocusMode(Camera.Parameters.FOCUS_MODE_EDOF);
                 parameters.setZoom(4);
                 parameters.setPreviewFormat(ImageFormat.NV21);
             }
