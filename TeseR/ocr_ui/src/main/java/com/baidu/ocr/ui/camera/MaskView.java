@@ -21,6 +21,8 @@ import android.support.annotation.IntDef;
 import android.support.annotation.RequiresApi;
 import android.support.v4.content.res.ResourcesCompat;
 import android.util.AttributeSet;
+import android.util.Log;
+import android.view.MotionEvent;
 import android.view.View;
 
 @SuppressWarnings("unused")
@@ -112,6 +114,12 @@ public class MaskView extends View {
 
     private void init() {
         locatorDrawable = ResourcesCompat.getDrawable(getResources(), R.drawable.bd_ocr_id_card_locator_front, null);
+    }
+
+    @Override
+    public boolean onTouchEvent(MotionEvent event) {
+        Log.i("dd", "Maskview");
+        return super.onTouchEvent(event);
     }
 
     @Override

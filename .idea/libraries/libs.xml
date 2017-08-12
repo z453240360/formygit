@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="libs">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/TeseR/app/libs/Sunflower.jar!/" />
+      <root url="jar://$PROJECT_DIR$/TeseR/app/libs/ocr-sdk.jar!/" />
+      <root url="jar://$PROJECT_DIR$/TeseR/app/libs/Msc.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

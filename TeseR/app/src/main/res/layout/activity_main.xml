@@ -35,10 +35,10 @@
         android:id="@+id/recycler_view"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        app:layout_heightPercent="41%"
-        app:layout_marginTopPercent="20%"
-        app:layout_marginLeftPercent="22%"
-        app:layout_widthPercent="55%"
+        app:layout_heightPercent="36%"
+        app:layout_marginTopPercent="22%"
+        app:layout_marginLeftPercent="24.5%"
+        app:layout_widthPercent="50%"
         android:visibility="visible" />
 
     <android.support.percent.PercentRelativeLayout
@@ -46,8 +46,8 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_heightPercent="41%"
-        app:layout_marginTopPercent="21%"
-        app:layout_marginLeftPercent="23%"
+        app:layout_marginTopPercent="20%"
+        app:layout_marginLeftPercent="22%"
         android:visibility="invisible"
         app:layout_widthPercent="55%"
         android:background="@mipmap/tansuoqi">
@@ -56,14 +56,13 @@
             android:id="@+id/mTxt_1"
             android:layout_width="0dp"
             android:layout_height="0dp"
-            app:layout_heightPercent="30%"
-            app:layout_widthPercent="30%"
-            app:layout_marginTopPercent="10%"
-            app:layout_marginLeftPercent="10%"
+            app:layout_heightPercent="36%"
+            app:layout_widthPercent="40%"
+            app:layout_marginTopPercent="5%"
+            app:layout_marginLeftPercent="5%"
             android:background="@mipmap/kuang"
             android:gravity="center"
-            android:text="你"
-            android:textSize="20sp"
+            android:textSize="60sp"
             android:textColor="#000"
             />
 
@@ -72,13 +71,13 @@
 
             android:layout_width="0dp"
             android:layout_height="0dp"
-            app:layout_heightPercent="30%"
-            app:layout_widthPercent="30%"
-            app:layout_marginTopPercent="10%"
+            app:layout_heightPercent="20%"
+            app:layout_widthPercent="40%"
+            app:layout_marginTopPercent="5%"
             app:layout_marginLeftPercent="10%"
             android:layout_toRightOf="@id/mTxt_1"
             android:scrollbars="horizontal"
-            android:text="shou"
+            android:textSize="25sp"
             android:textColor="#000"
             />
 
@@ -86,12 +85,10 @@
             android:id="@+id/mBtn_txtshow"
             android:layout_width="0dp"
             android:layout_height="0dp"
-            app:layout_heightPercent="30%"
-            app:layout_widthPercent="30%"
-            app:layout_marginTopPercent="10%"
-            app:layout_marginLeftPercent="50%"
+            app:layout_heightPercent="13%"
+            app:layout_widthPercent="15%"
+            android:layout_alignLeft="@id/mTxt_2"
             android:layout_below="@id/mTxt_2"
-
             android:scaleType="fitXY"
             android:clickable="true"
             android:onClick="onClick"
@@ -103,10 +100,8 @@
             android:layout_height="0dp"
             app:layout_heightPercent="15%"
             app:layout_widthPercent="2%"
-            app:layout_marginTopPercent="10%"
             app:layout_marginLeftPercent="50%"
             android:layout_alignParentBottom="true"
-
             android:src="@mipmap/zhong" />
 
         <ImageView
@@ -116,8 +111,8 @@
             android:layout_height="0dp"
             app:layout_heightPercent="15%"
             app:layout_widthPercent="20%"
-            app:layout_marginTopPercent="10%"
-            app:layout_marginLeftPercent="60%"
+            app:layout_marginTopPercent="1%"
+            app:layout_marginLeftPercent="62%"
             android:layout_alignParentBottom="true"
             android:clickable="true"
             android:onClick="onClick"
@@ -129,7 +124,7 @@
             android:layout_height="0dp"
             app:layout_heightPercent="15%"
             app:layout_widthPercent="20%"
-            app:layout_marginTopPercent="10%"
+            app:layout_marginTopPercent="1%"
             app:layout_marginLeftPercent="20%"
             android:layout_alignParentBottom="true"
             android:clickable="true"
@@ -139,28 +134,27 @@
         <TextView
             android:id="@+id/mTxt_3"
             android:layout_width="0dp"
-            android:layout_height="0dp"
-            app:layout_heightPercent="10%"
-            app:layout_widthPercent="30%"
-            app:layout_marginTopPercent="10%"
-            app:layout_marginLeftPercent="10%"
+            android:layout_height="wrap_content"
+            app:layout_widthPercent="100%"
+            app:layout_marginTopPercent="2%"
+            app:layout_marginLeftPercent="5%"
             android:layout_below="@id/mTxt_1"
-
             android:text="基本解释:"
             android:textColor="#000"
-            android:textSize="16sp" />
+            android:textSize="20sp" />
 
         <TextView
             android:id="@+id/mTxt_4"
             android:scrollbars="vertical"
             android:layout_width="0dp"
-            android:layout_height="0dp"
+            android:layout_height="wrap_content"
             app:layout_widthPercent="100%"
-            app:layout_marginTopPercent="10%"
-            app:layout_marginLeftPercent="10%"
+            app:layout_marginTopPercent="1%"
+            app:layout_marginLeftPercent="5%"
+            app:layout_marginRightPercent="5%"
             android:layout_below="@id/mTxt_3"
             android:layout_above="@id/img4"
-            android:text="事实上是是是是是"
+            android:textSize="16sp"
             android:textColor="#000"
             />
 
@@ -171,9 +165,10 @@
             android:id="@+id/general_button"
             android:layout_width="0dp"
             android:layout_height="0dp"
-            app:layout_heightPercent="16%"
+            app:layout_heightPercent="18%"
             app:layout_widthPercent="17%"
-            app:layout_marginLeftPercent="30%"
+            android:background="@null"
+            app:layout_marginLeftPercent="28%"
             app:layout_marginTopPercent="72%"
             android:onClick="onClick" />
 
@@ -181,8 +176,9 @@
             android:id="@+id/mBtn_2"
             android:layout_width="0dp"
             android:layout_height="0dp"
-            app:layout_heightPercent="16%"
+            app:layout_heightPercent="18%"
             app:layout_widthPercent="17%"
+            android:background="@null"
             app:layout_marginLeftPercent="53%"
             app:layout_marginTopPercent="72%"
             android:onClick="onClick" />

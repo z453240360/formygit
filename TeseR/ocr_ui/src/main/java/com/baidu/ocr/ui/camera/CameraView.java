@@ -24,8 +24,10 @@ import android.os.HandlerThread;
 import android.os.Looper;
 import android.support.annotation.IntDef;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.util.TypedValue;
 import android.view.Gravity;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
@@ -666,4 +668,18 @@ public class CameraView extends FrameLayout {
             });
         }
     }
+
+//    @Override
+//    public boolean onTouchEvent(MotionEvent event) {
+//        Log.i("dd", "cameraView: ");
+////        return super.onTouchEvent(event);
+//        return true;
+//    }
+//
+//    @Override
+//    public boolean onInterceptTouchEvent(MotionEvent ev) {
+//        Log.i("dd", "onInterceptTouchEvent: ");
+////        return super.onInterceptTouchEvent(ev);
+//        return true;
+//    }
 }

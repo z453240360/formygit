@@ -93,9 +93,6 @@ public class MainActivity extends AppCompatActivity {
         initView();
         ss = SpeechSynthesizer.createSynthesizer(this, null);
 
-        int widthPixels = getResources().getDisplayMetrics().widthPixels;
-        int heightPixels = getResources().getDisplayMetrics().heightPixels;
-        Toast.makeText(this, ""+widthPixels+heightPixels, Toast.LENGTH_SHORT).show();
     }
 
 

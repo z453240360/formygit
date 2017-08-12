@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="license1">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/TeseR/ocr_ui/libs/license.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

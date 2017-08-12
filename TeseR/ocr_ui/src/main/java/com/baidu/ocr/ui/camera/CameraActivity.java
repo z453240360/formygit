@@ -28,6 +28,8 @@ import android.os.Handler;
 import android.provider.MediaStore;
 import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
+import android.util.Log;
+import android.view.MotionEvent;
 import android.view.Surface;
 import android.view.View;
 import android.widget.ImageView;
@@ -499,6 +501,12 @@ public class CameraActivity extends Activity {
             default:
                 break;
         }
+    }
+
+    @Override
+    public boolean onTouchEvent(MotionEvent event) {
+        Log.i("dd", "CameraActivity: ");
+        return super.onTouchEvent(event);
     }
 
     @Override

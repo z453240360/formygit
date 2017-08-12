@@ -1,0 +1,34 @@
+<component name="libraryTable">
+  <library name="debug">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/TeseR/app/build/intermediates/pre-dexed/debug/gson-2.8.0_1e2c0f3a55755190c9f68a61389e5ed9c4b3a48f.jar!/" />
+      <root url="jar://$PROJECT_DIR$/TeseR/app/build/intermediates/pre-dexed/debug/com.android.support-support-v4-25.1.1_82e0f2a5ef6aa9466330f9f45ab1254890f3d44f.jar!/" />
+      <root url="jar://$PROJECT_DIR$/TeseR/app/build/intermediates/pre-dexed/debug/Msc_4ea531af08b6ed2f80a5724916d5a36163d70d36.jar!/" />
+      <root url="jar://$PROJECT_DIR$/TeseR/app/build/intermediates/pre-dexed/debug/com.android.support-animated-vector-drawable-25.1.1_3583cd4dc78431459d9a1da1794ebd9c0d84de5c.jar!/" />
+      <root url="jar://$PROJECT_DIR$/TeseR/app/build/intermediates/pre-dexed/debug/okio-1.13.0_a928e7c0509a2ecdb0a9b927fb8003d4f6159271.jar!/" />
+      <root url="jar://$PROJECT_DIR$/TeseR/app/build/intermediates/pre-dexed/debug/library-1.0.19_fc777493bbed151d6ec386e565ce9d31e8ab67a8.jar!/" />
+      <root url="jar://$PROJECT_DIR$/TeseR/app/build/intermediates/pre-dexed/debug/com.android.support-support-core-ui-25.1.1_1e039691e3f1a4bfe5c8f9fcc0b3d99877274b5c.jar!/" />
+      <root url="jar://$PROJECT_DIR$/TeseR/app/build/intermediates/pre-dexed/debug/com.android.support-support-vector-drawable-25.1.1_35ac8040f94a972786ce54eff91b6055621270bc.jar!/" />
+      <root url="jar://$PROJECT_DIR$/TeseR/app/build/intermediates/pre-dexed/debug/retrofit-2.3.0_6351f7b7f771cd13716db48e24e4315d547701b4.jar!/" />
+      <root url="jar://$PROJECT_DIR$/TeseR/app/build/intermediates/pre-dexed/debug/okhttp-3.8.0_10f33f9fff07c350593b0bab25fbff7b1df423a1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/TeseR/app/build/intermediates/pre-dexed/debug/com.android.support-design-23.4.0_bf4ed46d2df0b11fbf5832491ee71662af5550c8.jar!/" />
+      <root url="jar://$PROJECT_DIR$/TeseR/app/build/intermediates/pre-dexed/debug/com.android.support-recyclerview-v7-25.1.1_8ddfcfdb51feea6e31298f8975a6557bfe89fe4d.jar!/" />
+      <root url="jar://$PROJECT_DIR$/TeseR/app/build/intermediates/pre-dexed/debug/picasso-2.5.2_94785a997e94773aa738f67ef3fed8db90a9f542.jar!/" />
+      <root url="jar://$PROJECT_DIR$/TeseR/app/build/intermediates/pre-dexed/debug/com.android.support-support-compat-25.1.1_64748f0a20bf825754bef32850606b5d0151adbd.jar!/" />
+      <root url="jar://$PROJECT_DIR$/TeseR/app/build/intermediates/pre-dexed/debug/TeseR-ocr_ui-unspecified_a2bd579eaa4f1e7c94f728fdb8dadec430e42060.jar!/" />
+      <root url="jar://$PROJECT_DIR$/TeseR/app/build/intermediates/pre-dexed/debug/com.jcodecraeer-xrecyclerview-1.3.2_29f8c1f84915f5309db8675bb5c0e65d92107c8a.jar!/" />
+      <root url="jar://$PROJECT_DIR$/TeseR/app/build/intermediates/pre-dexed/debug/com.android.support-support-core-utils-25.1.1_fffb07c2444e2a724fcd73ec3bd33d8378e1aee7.jar!/" />
+      <root url="jar://$PROJECT_DIR$/TeseR/app/build/intermediates/pre-dexed/debug/ocr-sdk_1cae16a4adc4050f8b40f6385d2165a5b7faa8ae.jar!/" />
+      <root url="jar://$PROJECT_DIR$/TeseR/app/build/intermediates/pre-dexed/debug/debug_3ce3f71022b447af95f0144ac5c7e6f25e1f6688.jar!/" />
+      <root url="jar://$PROJECT_DIR$/TeseR/app/build/intermediates/pre-dexed/debug/com.android.support-appcompat-v7-25.1.1_b857d78af2c40eb23fee442db752cbc3d071b24e.jar!/" />
+      <root url="jar://$PROJECT_DIR$/TeseR/app/build/intermediates/pre-dexed/debug/license_c089476c9e409bf31fa98921bdab2f70ed8c0253.jar!/" />
+      <root url="jar://$PROJECT_DIR$/TeseR/app/build/intermediates/pre-dexed/debug/com.android.support-support-fragment-25.1.1_994e0b33684f146a3772a73f9c29db39bb66a4c4.jar!/" />
+      <root url="jar://$PROJECT_DIR$/TeseR/app/build/intermediates/pre-dexed/debug/jp.wasabeef-recyclerview-animators-2.2.5_59ef3ac808f36cde78de364e3d7fa6e71844d7e0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/TeseR/app/build/intermediates/pre-dexed/debug/Sunflower_985dbfa4b91b901bd5d2de20b655310f4d58fb97.jar!/" />
+      <root url="jar://$PROJECT_DIR$/TeseR/app/build/intermediates/pre-dexed/debug/com.android.support-support-media-compat-25.1.1_553dc316097f55787e4142de96c5f5b8e5792d9a.jar!/" />
+      <root url="jar://$PROJECT_DIR$/TeseR/app/build/intermediates/pre-dexed/debug/support-annotations-25.1.1_d39f9a1092e06d4a22c909a5b5b81d1e0e2d8c1f.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

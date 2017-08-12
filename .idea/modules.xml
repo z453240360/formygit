@@ -2,7 +2,27 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/formygit.iml" filepath="$PROJECT_DIR$/.idea/formygit.iml" />
+      <module fileurl="file://$PROJECT_DIR$/TeseR/ocr_ui/build/intermediates/exploded-aar/com.android.support.test/runner/0.5/0.5.iml" filepath="$PROJECT_DIR$/TeseR/ocr_ui/build/intermediates/exploded-aar/com.android.support.test/runner/0.5/0.5.iml" />
+      <module fileurl="file://$PROJECT_DIR$/TeseR/app/build/intermediates/exploded-aar/com.jcodecraeer/xrecyclerview/1.3.2/1.3.2.iml" filepath="$PROJECT_DIR$/TeseR/app/build/intermediates/exploded-aar/com.jcodecraeer/xrecyclerview/1.3.2/1.3.2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/TeseR/ocr_ui/build/intermediates/exploded-aar/com.android.support.test.espresso/espresso-idling-resource/2.2.2/2.2.2.iml" filepath="$PROJECT_DIR$/TeseR/ocr_ui/build/intermediates/exploded-aar/com.android.support.test.espresso/espresso-idling-resource/2.2.2/2.2.2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/TeseR/app/build/intermediates/exploded-aar/jp.wasabeef/recyclerview-animators/2.2.5/2.2.5.iml" filepath="$PROJECT_DIR$/TeseR/app/build/intermediates/exploded-aar/jp.wasabeef/recyclerview-animators/2.2.5/2.2.5.iml" />
+      <module fileurl="file://$PROJECT_DIR$/TeseR/app/build/intermediates/exploded-aar/com.android.support/design/23.4.0/23.4.0.iml" filepath="$PROJECT_DIR$/TeseR/app/build/intermediates/exploded-aar/com.android.support/design/23.4.0/23.4.0.iml" />
+      <module fileurl="file://$PROJECT_DIR$/TeseR/ocr_ui/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/25.1.1/25.1.1.iml" filepath="$PROJECT_DIR$/TeseR/ocr_ui/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/25.1.1/25.1.1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/TeseR/ocr_ui/build/generated/source/buildConfig/androidTest/androidTest.iml" filepath="$PROJECT_DIR$/TeseR/ocr_ui/build/generated/source/buildConfig/androidTest/androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/TeseR/app/build/generated/source/r/androidTest/androidTest1.iml" filepath="$PROJECT_DIR$/TeseR/app/build/generated/source/r/androidTest/androidTest1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/TeseR/app/src/androidTest/androidTest2.iml" filepath="$PROJECT_DIR$/TeseR/app/src/androidTest/androidTest2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/TeseR/ocr_ui/build/generated/source/r/androidTest/androidTest3.iml" filepath="$PROJECT_DIR$/TeseR/ocr_ui/build/generated/source/r/androidTest/androidTest3.iml" />
+      <module fileurl="file://$PROJECT_DIR$/TeseR/app/build/generated/source/buildConfig/androidTest/androidTest4.iml" filepath="$PROJECT_DIR$/TeseR/app/build/generated/source/buildConfig/androidTest/androidTest4.iml" />
+      <module fileurl="file://$PROJECT_DIR$/TeseR/app/build/generated/source/buildConfig/buildConfig.iml" filepath="$PROJECT_DIR$/TeseR/app/build/generated/source/buildConfig/buildConfig.iml" />
+      <module fileurl="file://$PROJECT_DIR$/TeseR/ocr_ui/build/generated/source/buildConfig/buildConfig1.iml" filepath="$PROJECT_DIR$/TeseR/ocr_ui/build/generated/source/buildConfig/buildConfig1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/TeseR/ocr_ui/build/intermediates/manifests/aapt/debug/debug.iml" filepath="$PROJECT_DIR$/TeseR/ocr_ui/build/intermediates/manifests/aapt/debug/debug.iml" />
+      <module fileurl="file://$PROJECT_DIR$/TeseR/app/src/main/main.iml" filepath="$PROJECT_DIR$/TeseR/app/src/main/main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/TeseR/ocr_ui/src/main/main1.iml" filepath="$PROJECT_DIR$/TeseR/ocr_ui/src/main/main1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/TeseR/app/build/generated/source/r/r.iml" filepath="$PROJECT_DIR$/TeseR/app/build/generated/source/r/r.iml" />
+      <module fileurl="file://$PROJECT_DIR$/TeseR/ocr_ui/build/generated/source/r/r1.iml" filepath="$PROJECT_DIR$/TeseR/ocr_ui/build/generated/source/r/r1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/TeseR/ocr_ui/build/intermediates/manifests/aapt/release/release.iml" filepath="$PROJECT_DIR$/TeseR/ocr_ui/build/intermediates/manifests/aapt/release/release.iml" />
+      <module fileurl="file://$PROJECT_DIR$/TeseR/app/src/test/test.iml" filepath="$PROJECT_DIR$/TeseR/app/src/test/test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/TeseR/app/build/intermediates/exploded-aar/TeseR/ocr_ui/unspecified/unspecified.iml" filepath="$PROJECT_DIR$/TeseR/app/build/intermediates/exploded-aar/TeseR/ocr_ui/unspecified/unspecified.iml" />
     </modules>
   </component>
 </project>
