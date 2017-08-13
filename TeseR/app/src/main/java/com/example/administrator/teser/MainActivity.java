@@ -333,6 +333,7 @@ public class MainActivity extends AppCompatActivity {
             public void onResult(AccessToken result) {
                 // 调用成功，返回AccessToken对象
                 String token = result.getAccessToken();
+                Log.i("dd", "onResult: "+token);
             }
 
             @Override

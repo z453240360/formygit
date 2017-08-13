@@ -13,6 +13,9 @@ import com.baidu.ocr.ui.crop.CropView;
 import com.baidu.ocr.ui.crop.FrameOverlayView;
 
 import android.Manifest;
+import android.animation.Animator;
+import android.animation.AnimatorSet;
+import android.animation.ObjectAnimator;
 import android.app.Activity;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -32,6 +35,7 @@ import android.util.Log;
 import android.view.MotionEvent;
 import android.view.Surface;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Toast;
 
@@ -75,12 +79,18 @@ public class CameraActivity extends Activity {
         }
     };
 
+    private float pict = 1.0f;
+
+    private Button mBtn_cDa,mBtn_cXiao;
+    private ImageView mMyMaskView;
+    private float picts;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.bd_ocr_activity_camera);
-
+        mMyMaskView = (ImageView) findViewById(R.id.mMyMaskView);
         takePictureContainer = (OCRCameraLayout) findViewById(R.id.take_picture_container);
         confirmResultContainer = (OCRCameraLayout) findViewById(R.id.confirm_result_container);
 
@@ -110,6 +120,38 @@ public class CameraActivity extends Activity {
         initParams();
 
         cameraView.setAutoPictureCallback(autoTakePictureCallback);
+
+        mBtn_cDa = (Button) findViewById(R.id.mBtn_cDa);
+        mBtn_cDa.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                AnimatorSet set1 = new AnimatorSet();
+                Log.i("dd", "onClick:fangaf ");
+                picts=pict+0.2f;
+                set1.play(ObjectAnimator.ofFloat(cameraView, "scaleX", 1,2).setDuration(0))
+                        .with(ObjectAnimator.ofFloat(cameraView, "scaleY", 1,2).setDuration(0));
+                set1.start();
+                pict=picts;
+            }
+        });
+
+        mBtn_cXiao = (Button) findViewById(R.id.mBtn_cDa);
+        mBtn_cXiao.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                if (pict<=2.0f&&pict>=1.0f){
+                    picts=pict-0.5f;
+                    AnimatorSet set1 = new AnimatorSet();
+                    set1.play(ObjectAnimator.ofFloat(cameraView, "scaleX", 1.0f,1.5f).setDuration(0))
+                            .with(ObjectAnimator.ofFloat(cameraView, "scaleY", picts,pict).setDuration(0));
+                    set1.start();
+                    pict=picts;
+                }
+
+            }
+        });
+
     }
 
     @Override
@@ -402,6 +444,7 @@ public class CameraActivity extends Activity {
     private View.OnClickListener confirmButtonOnClickListener = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
+            mMyMaskView.setVisibility(View.VISIBLE);
             doConfirmResult();
         }
     };
@@ -409,6 +452,7 @@ public class CameraActivity extends Activity {
     private View.OnClickListener confirmCancelButtonOnClickListener = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
+            mMyMaskView.setVisibility(View.VISIBLE);
             displayImageView.setImageBitmap(null);
             showTakePicture();
         }
@@ -503,11 +547,11 @@ public class CameraActivity extends Activity {
         }
     }
 
-    @Override
-    public boolean onTouchEvent(MotionEvent event) {
-        Log.i("dd", "CameraActivity: ");
-        return super.onTouchEvent(event);
-    }
+//    @Override
+//    public boolean onTouchEvent(MotionEvent event) {
+//        Log.i("dd", "CameraActivity: ");
+//        return super.onTouchEvent(event);
+//    }
 
     @Override
     protected void onDestroy() {

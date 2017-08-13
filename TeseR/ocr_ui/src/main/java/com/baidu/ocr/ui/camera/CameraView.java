@@ -212,8 +212,8 @@ public class CameraView extends FrameLayout {
             case MaskView.MASK_TYPE_NONE:
             default:
                 //在相机页面显示方框
-//                maskView.setVisibility(INVISIBLE);
-//                hintView.setVisibility(INVISIBLE);
+                maskView.setVisibility(INVISIBLE);
+                hintView.setVisibility(INVISIBLE);
                 break;
         }
 

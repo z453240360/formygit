@@ -74,12 +74,12 @@ public class MaskView extends View {
         this.maskType = maskType;
         switch (maskType) {
             case MASK_TYPE_ID_CARD_FRONT:
-                locatorDrawable = ResourcesCompat.getDrawable(getResources(),
-                        R.drawable.bd_ocr_id_card_locator_front, null);
+//                locatorDrawable = ResourcesCompat.getDrawable(getResources(),
+//                        R.drawable.bd_ocr_id_card_locator_front, null);
                 break;
             case MASK_TYPE_ID_CARD_BACK:
-                locatorDrawable = ResourcesCompat.getDrawable(getResources(),
-                        R.drawable.bd_ocr_id_card_locator_back, null);
+//                locatorDrawable = ResourcesCompat.getDrawable(getResources(),
+//                        R.drawable.bd_ocr_id_card_locator_back, null);
                 break;
             case MASK_TYPE_BANK_CARD:
                 break;
@@ -163,25 +163,25 @@ public class MaskView extends View {
         canvas.drawPath(path, pen);
         canvas.drawPath(path, eraser);
 
-        if (maskType == MASK_TYPE_ID_CARD_FRONT) {
-            locatorDrawable.setBounds(
-                    //TODO
-//                    (int) (left + 601f / 1006 * width),
-                    (int) (left + 100f / 1006 * width),
-
-                    (int) (top + (110f / 632) * height),
-                    (int) (left + (963f / 1006) * width),
-                    (int) (top + (476f / 632) * height));
-        } else if (maskType == MASK_TYPE_ID_CARD_BACK) {
-            locatorDrawable.setBounds(
-                    (int) (left + 51f / 1006 * width),
-                    (int) (top + (48f / 632) * height),
-                    (int) (left + (250f / 1006) * width),
-                    (int) (top + (262f / 632) * height));
-        }
-        if (locatorDrawable != null) {
-            locatorDrawable.draw(canvas);
-        }
+//        if (maskType == MASK_TYPE_ID_CARD_FRONT) {
+//            locatorDrawable.setBounds(
+//                    //TODO
+////                    (int) (left + 601f / 1006 * width),
+//                    (int) (left + 100f / 1006 * width),
+//
+//                    (int) (top + (110f / 632) * height),
+//                    (int) (left + (963f / 1006) * width),
+//                    (int) (top + (476f / 632) * height));
+//        } else if (maskType == MASK_TYPE_ID_CARD_BACK) {
+//            locatorDrawable.setBounds(
+//                    (int) (left + 51f / 1006 * width),
+//                    (int) (top + (48f / 632) * height),
+//                    (int) (left + (250f / 1006) * width),
+//                    (int) (top + (262f / 632) * height));
+//        }
+//        if (locatorDrawable != null) {
+//            locatorDrawable.draw(canvas);
+//        }
     }
 
     private Path path = new Path();

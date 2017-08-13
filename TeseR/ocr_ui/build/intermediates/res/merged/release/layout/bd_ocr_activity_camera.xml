@@ -27,4 +27,35 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"/>
 
+    <ImageView
+        android:id="@+id/mMyMaskView"
+        android:layout_centerHorizontal="true"
+        android:layout_above="@id/confirm_result_container"
+        android:layout_marginTop="110dp"
+        android:src="@drawable/biankuang"
+        android:layout_width="230dp"
+        android:layout_height="290dp" />
+
+
+
+
+
+    <Button
+        android:id="@+id/mBtn_cDa"
+        android:text="放大"
+        android:layout_centerInParent="true"
+        android:layout_alignParentRight="true"
+        android:layout_width="30dp"
+        android:layout_height="30dp" />
+
+    <Button
+        android:layout_below="@id/mBtn_cDa"
+        android:id="@+id/mBtn_cXiao"
+        android:text="缩小"
+        android:layout_marginTop="20dp"
+        android:layout_centerInParent="true"
+        android:layout_alignParentRight="true"
+        android:layout_width="30dp"
+        android:layout_height="30dp" />
+
 </RelativeLayout>

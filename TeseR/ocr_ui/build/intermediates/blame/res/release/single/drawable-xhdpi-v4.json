@@ -96,12 +96,20 @@
         "source": "C:\\Users\\dongdong\\Documents\\formygit\\TeseR\\ocr_ui\\src\\main\\res\\drawable-xhdpi\\bd_ocr_take_photo_highlight.png"
     },
     {
+        "merged": "C:\\Users\\dongdong\\Documents\\formygit\\TeseR\\ocr_ui\\build\\intermediates\\res\\merged\\release\\drawable-xhdpi-v4\\jia.png",
+        "source": "C:\\Users\\dongdong\\Documents\\formygit\\TeseR\\ocr_ui\\src\\main\\res\\drawable-xhdpi\\jia.png"
+    },
+    {
         "merged": "C:\\Users\\dongdong\\Documents\\formygit\\TeseR\\ocr_ui\\build\\intermediates\\res\\merged\\release\\drawable-xhdpi-v4\\abc_list_longpressed_holo.9.png",
         "source": "C:\\Users\\dongdong\\Documents\\formygit\\TeseR\\ocr_ui\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.1.1\\res\\drawable-xhdpi-v4\\abc_list_longpressed_holo.9.png"
     },
     {
         "merged": "C:\\Users\\dongdong\\Documents\\formygit\\TeseR\\ocr_ui\\build\\intermediates\\res\\merged\\release\\drawable-xhdpi-v4\\abc_ic_menu_cut_mtrl_alpha.png",
         "source": "C:\\Users\\dongdong\\Documents\\formygit\\TeseR\\ocr_ui\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.1.1\\res\\drawable-xhdpi-v4\\abc_ic_menu_cut_mtrl_alpha.png"
+    },
+    {
+        "merged": "C:\\Users\\dongdong\\Documents\\formygit\\TeseR\\ocr_ui\\build\\intermediates\\res\\merged\\release\\drawable-xhdpi-v4\\biankuang.xml",
+        "source": "C:\\Users\\dongdong\\Documents\\formygit\\TeseR\\ocr_ui\\src\\main\\res\\drawable-xhdpi\\biankuang.xml"
     },
     {
         "merged": "C:\\Users\\dongdong\\Documents\\formygit\\TeseR\\ocr_ui\\build\\intermediates\\res\\merged\\release\\drawable-xhdpi-v4\\bd_ocr_round_corner.xml",
@@ -234,6 +242,10 @@
     {
         "merged": "C:\\Users\\dongdong\\Documents\\formygit\\TeseR\\ocr_ui\\build\\intermediates\\res\\merged\\release\\drawable-xhdpi-v4\\bd_ocr_hint_align_bank_card.png",
         "source": "C:\\Users\\dongdong\\Documents\\formygit\\TeseR\\ocr_ui\\src\\main\\res\\drawable-xhdpi\\bd_ocr_hint_align_bank_card.png"
+    },
+    {
+        "merged": "C:\\Users\\dongdong\\Documents\\formygit\\TeseR\\ocr_ui\\build\\intermediates\\res\\merged\\release\\drawable-xhdpi-v4\\jian.png",
+        "source": "C:\\Users\\dongdong\\Documents\\formygit\\TeseR\\ocr_ui\\src\\main\\res\\drawable-xhdpi\\jian.png"
     },
     {
         "merged": "C:\\Users\\dongdong\\Documents\\formygit\\TeseR\\ocr_ui\\build\\intermediates\\res\\merged\\release\\drawable-xhdpi-v4\\notification_bg_low_normal.9.png",

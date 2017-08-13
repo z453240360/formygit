@@ -27,4 +27,25 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"/>
 
+    <com.baidu.ocr.ui.camera.MyMaskView
+        android:id="@+id/mMyMaskView"
+        android:layout_above="@id/confirm_result_container"
+        android:layout_marginBottom="160dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+
+
+
+
+    <Button
+        android:id="@+id/mBtn_cDa"
+        android:text="放大"
+        android:layout_centerInParent="true"
+        android:layout_alignParentRight="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+
+
 </RelativeLayout>
