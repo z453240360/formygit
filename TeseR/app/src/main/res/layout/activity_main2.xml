@@ -31,4 +31,14 @@
         android:text="小"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
+
+    <com.baidu.ocr.ui.crop.FrameOverlayView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+
+
+
+
+
 </LinearLayout>

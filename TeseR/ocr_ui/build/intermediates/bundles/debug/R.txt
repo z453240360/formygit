@@ -534,6 +534,7 @@ int drawable bd_ocr_take_photo_normal 0x7f020062
 int drawable bd_ocr_take_photo_selector 0x7f020063
 int drawable biankuang 0x7f020064
 int drawable jia 0x7f020065
+<<<<<<< HEAD
 int drawable jian 0x7f020066
 int drawable notification_action_background 0x7f020067
 int drawable notification_bg 0x7f020068
@@ -547,6 +548,23 @@ int drawable notification_template_icon_bg 0x7f020071
 int drawable notification_template_icon_low_bg 0x7f020072
 int drawable notification_tile_bg 0x7f02006f
 int drawable notify_panel_notification_icon_bg 0x7f020070
+=======
+int drawable jia2 0x7f020066
+int drawable jian 0x7f020067
+int drawable jian2 0x7f020068
+int drawable notification_action_background 0x7f020069
+int drawable notification_bg 0x7f02006a
+int drawable notification_bg_low 0x7f02006b
+int drawable notification_bg_low_normal 0x7f02006c
+int drawable notification_bg_low_pressed 0x7f02006d
+int drawable notification_bg_normal 0x7f02006e
+int drawable notification_bg_normal_pressed 0x7f02006f
+int drawable notification_icon_background 0x7f020070
+int drawable notification_template_icon_bg 0x7f020073
+int drawable notification_template_icon_low_bg 0x7f020074
+int drawable notification_tile_bg 0x7f020071
+int drawable notify_panel_notification_icon_bg 0x7f020072
+>>>>>>> 0811ae1f98b6ebf935802530ed00ca11055163b6
 int id action0 0x7f0b006c
 int id action_bar 0x7f0b0047
 int id action_bar_activity_content 0x7f0b0000

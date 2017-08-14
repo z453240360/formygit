@@ -201,7 +201,9 @@ public class Camera1Control implements ICameraControl {
                 parameters.setRotation(180);
                 break;
         }
+        //相机显示尺寸
         Camera.Size picSize = getOptimalSize(camera.getParameters().getSupportedPictureSizes());
+
         parameters.setPictureSize(picSize.width, picSize.height);
         camera.setParameters(parameters);
         takingPicture.set(true);
@@ -216,6 +218,9 @@ public class Camera1Control implements ICameraControl {
                             startPreview(false);
                             takingPicture.set(false);
                             if (onTakePictureCallback != null) {
+
+
+
                                 onTakePictureCallback.onPictureTaken(data);
                             }
                         }
@@ -234,6 +239,7 @@ public class Camera1Control implements ICameraControl {
         this.permissionCallback = callback;
     }
 
+    //相机一的预览开始
     public Camera1Control(Context context) {
         this.context = context;
         previewView = new PreviewView(context);
@@ -244,6 +250,7 @@ public class Camera1Control implements ICameraControl {
         setupDisplayView();
     }
 
+    //设置相机预览
     private void setupDisplayView() {
         final TextureView textureView = new TextureView(context);
         previewView.textureView = textureView;
@@ -298,6 +305,7 @@ public class Camera1Control implements ICameraControl {
     };
 
 
+    //初始化 照相机
     private void initCamera() {
         try {
             if (camera == null) {
@@ -357,7 +365,7 @@ public class Camera1Control implements ICameraControl {
         }
     };
 
-    // 开启预览
+    // 开启相机预览
     private void startPreview(boolean checkPermission) {
         if (ActivityCompat.checkSelfPermission(context, Manifest.permission.CAMERA)
                 != PackageManager.PERMISSION_GRANTED) {
@@ -372,6 +380,7 @@ public class Camera1Control implements ICameraControl {
             camera.startPreview();
         }
     }
+
 
     private void opPreviewSize(int width, @SuppressWarnings("unused") int height) {
 
@@ -463,6 +472,7 @@ public class Camera1Control implements ICameraControl {
         }
     }
 
+    //------------------------------------------------------------------------------------------------------
     /**
      * 有些相机匹配不到完美的比例。比如。我们的layout是4:3的。预览只有16:9
      * 的，如果直接显示图片会拉伸，变形。缩放的话，又有黑边。所以我们采取的策略
@@ -507,13 +517,14 @@ public class Camera1Control implements ICameraControl {
                 width = (int) (height * ratio);
             }
 
-            int l = (getWidth() - width) / 2;
-            int t = (getHeight() - height) / 2;
+            int l = (getWidth() - width)/2;
+            int t = (getHeight() - height) /2;
 
             previewFrame.left = l;
             previewFrame.top = t;
             previewFrame.right = l + width;
             previewFrame.bottom = t + height;
+
         }
 
         @Override

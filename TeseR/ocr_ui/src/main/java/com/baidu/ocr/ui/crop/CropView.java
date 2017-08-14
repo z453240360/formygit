@@ -92,7 +92,7 @@ public class CropView extends View {
     private void setBitmap(Bitmap bitmap) {
         this.bitmap = bitmap;
         matrix.reset();
-        centerImage(getWidth(), getHeight());
+        centerImage(getWidth(), getHeight());//====================================================
         rotation = 0;
         invalidate();
     }
@@ -104,23 +104,22 @@ public class CropView extends View {
         invalidate();
     }
 
-    public Bitmap crop(Rect frame) {
+    public Bitmap crop(Rect frame,float count) {
         float scale = getScale();
-
+        Canvas canvas = null;
         float[] src = new float[] {frame.left, frame.top};
         float[] desc = new float[] {0, 0};
-
         Matrix invertedMatrix = new Matrix();
         this.matrix.invert(invertedMatrix);
         invertedMatrix.mapPoints(desc, src);
-
         Matrix matrix = new Matrix();
-
         int width = (int) (frame.width() / scale);
         int height = (int) (frame.height() / scale);
-        Bitmap bitmap = Bitmap.createBitmap(width, height, Bitmap.Config.RGB_565);
-        Canvas canvas = new Canvas(bitmap);
 
+        Bitmap bitmap = Bitmap.createBitmap((int)width, (int)height, Bitmap.Config.RGB_565);
+
+
+        canvas = new Canvas(bitmap);
         Bitmap originalBitmap = this.bitmap;
         matrix.postTranslate(-desc[0], -desc[1]);
         canvas.drawBitmap(originalBitmap, matrix, null);

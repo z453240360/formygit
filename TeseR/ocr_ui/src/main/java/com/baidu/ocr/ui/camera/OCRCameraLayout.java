@@ -138,6 +138,11 @@ public class OCRCameraLayout extends FrameLayout {
             backgroundRect.right = width;
             backgroundRect.bottom = height;
 
+//            backgroundRect.left = 100;
+//            backgroundRect.top = 100;
+//            backgroundRect.right = 100;
+//            backgroundRect.bottom = 100;
+
             // layout centerView
             if (centerView != null) {
                 left = contentWidth + (widthLeft - centerView.getMeasuredWidth()) / 2;

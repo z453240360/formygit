@@ -97,6 +97,7 @@ public class FrameOverlayView extends View {
         cornerLineWidth = DimensionUtil.dpToPx(3);
     }
 
+    //测量手机的宽高
     @Override
     protected void onSizeChanged(int w, int h, int oldw, int oldh) {
         super.onSizeChanged(w, h, oldw, oldh);
