@@ -1,6 +1,7 @@
 package com.example.administrator.teser;
 
 import android.animation.Animator;
+import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
 import android.app.Activity;
 import android.content.Intent;
@@ -55,16 +56,20 @@ public class Main2Activity extends AppCompatActivity {
 
             case R.id.mBtn_da:
 
-                Animator m= ObjectAnimator.ofFloat(mBtn_imagevIEW,"scaleX",1,2);
-                    m.setDuration(0);
+//                Animator m= ObjectAnimator.ofFloat(mBtn_imagevIEW,"scaleX",1,2);
+//                    m.setDuration(0);
+//                m.start();
 
-                m.start();
+
+                AnimatorSet set1 = new AnimatorSet();
+                set1.play(ObjectAnimator.ofFloat(mBtn_imagevIEW, "scaleX", 1.0f,2.0f).setDuration(0))
+                        .with(ObjectAnimator.ofFloat(mBtn_imagevIEW, "scaleY", 1.0f,2.0f).setDuration(0));
+                set1.start();
                 break;
 
             case R.id.mBtn_xiao:
                 Animator m2= ObjectAnimator.ofFloat(mBtn_imagevIEW,"scaleX",2,1);
                 m2.setDuration(3000);
-
                 m2.start();
                 break;
         }

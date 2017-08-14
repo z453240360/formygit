@@ -42,20 +42,20 @@
 
     <Button
         android:id="@+id/mBtn_cDa"
-        android:text="放大"
+        android:background="@drawable/jia"
         android:layout_centerInParent="true"
         android:layout_alignParentRight="true"
-        android:layout_width="30dp"
-        android:layout_height="30dp" />
+        android:layout_width="40dp"
+        android:layout_height="40dp" />
 
     <Button
         android:layout_below="@id/mBtn_cDa"
         android:id="@+id/mBtn_cXiao"
-        android:text="缩小"
+        android:background="@drawable/jian"
         android:layout_marginTop="20dp"
         android:layout_centerInParent="true"
         android:layout_alignParentRight="true"
-        android:layout_width="30dp"
-        android:layout_height="30dp" />
+        android:layout_width="40dp"
+        android:layout_height="40dp" />
 
 </RelativeLayout>

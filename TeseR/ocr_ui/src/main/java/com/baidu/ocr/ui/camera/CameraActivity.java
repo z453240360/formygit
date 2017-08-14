@@ -80,7 +80,7 @@ public class CameraActivity extends Activity {
     };
 
     private float pict = 1.0f;
-
+    private int count = 0;
     private Button mBtn_cDa,mBtn_cXiao;
     private ImageView mMyMaskView;
     private float picts;
@@ -125,23 +125,45 @@ public class CameraActivity extends Activity {
         mBtn_cDa.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                AnimatorSet set1 = new AnimatorSet();
-                set1.play(ObjectAnimator.ofFloat(cameraView, "scaleX", 1,2).setDuration(0))
-                        .with(ObjectAnimator.ofFloat(cameraView, "scaleY", 1,2).setDuration(0));
-                set1.start();
+                if (count == 0) {
+                    count++;
+                    AnimatorSet set1 = new AnimatorSet();
+                    set1.play(ObjectAnimator.ofFloat(cameraView, "scaleX", 1.0f, 1.5f).setDuration(0))
+                            .with(ObjectAnimator.ofFloat(cameraView, "scaleY", 1.0f, 1.5f).setDuration(0));
+                    set1.start();
+                }else if (count==1){
+                    AnimatorSet set1 = new AnimatorSet();
+                    set1.play(ObjectAnimator.ofFloat(cameraView, "scaleX", 1.0f, 2.0f).setDuration(0))
+                            .with(ObjectAnimator.ofFloat(cameraView, "scaleY", 1.0f, 2.0f).setDuration(0));
+                    set1.start();
+                }
             }
         });
 
-        mBtn_cXiao = (Button) findViewById(R.id.mBtn_cDa);
+
+
+        mBtn_cXiao = (Button) findViewById(R.id.mBtn_cXiao);
         mBtn_cXiao.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                    AnimatorSet set1 = new AnimatorSet();
-                    set1.play(ObjectAnimator.ofFloat(cameraView, "scaleX", 2.0f,1.0f).setDuration(0))
-                            .with(ObjectAnimator.ofFloat(cameraView, "scaleY", 2.0f,1.0f).setDuration(0));
-                    set1.start();
-                
+                    if (count==1){
+                        count--;
+                        AnimatorSet set1 = new AnimatorSet();
+                        set1.play(ObjectAnimator.ofFloat(cameraView, "scaleX", 2.0f,1.5f).setDuration(0))
+                                .with(ObjectAnimator.ofFloat(cameraView, "scaleY", 2.0f,1.5f).setDuration(0));
+                        set1.start();
+                    }else if (count==0){
+                        AnimatorSet set1 = new AnimatorSet();
+                        set1.play(ObjectAnimator.ofFloat(cameraView, "scaleX", 1.5f,1.0f).setDuration(0))
+                                .with(ObjectAnimator.ofFloat(cameraView, "scaleY", 1.5f,1.0f).setDuration(0));
+                        set1.start();
+                    }
+
+
+
+
+
 
             }
         });
