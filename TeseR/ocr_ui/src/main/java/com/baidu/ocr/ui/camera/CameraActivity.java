@@ -126,12 +126,9 @@ public class CameraActivity extends Activity {
             @Override
             public void onClick(View v) {
                 AnimatorSet set1 = new AnimatorSet();
-                Log.i("dd", "onClick:fangaf ");
-                picts=pict+0.2f;
                 set1.play(ObjectAnimator.ofFloat(cameraView, "scaleX", 1,2).setDuration(0))
                         .with(ObjectAnimator.ofFloat(cameraView, "scaleY", 1,2).setDuration(0));
                 set1.start();
-                pict=picts;
             }
         });
 
@@ -140,14 +137,11 @@ public class CameraActivity extends Activity {
             @Override
             public void onClick(View v) {
 
-                if (pict<=2.0f&&pict>=1.0f){
-                    picts=pict-0.5f;
                     AnimatorSet set1 = new AnimatorSet();
-                    set1.play(ObjectAnimator.ofFloat(cameraView, "scaleX", 1.0f,1.5f).setDuration(0))
-                            .with(ObjectAnimator.ofFloat(cameraView, "scaleY", picts,pict).setDuration(0));
+                    set1.play(ObjectAnimator.ofFloat(cameraView, "scaleX", 2.0f,1.0f).setDuration(0))
+                            .with(ObjectAnimator.ofFloat(cameraView, "scaleY", 2.0f,1.0f).setDuration(0));
                     set1.start();
-                    pict=picts;
-                }
+                
 
             }
         });
