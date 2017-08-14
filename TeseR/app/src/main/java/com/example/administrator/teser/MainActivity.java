@@ -13,6 +13,7 @@ import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.text.method.ScrollingMovementMethod;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.View;
 import android.view.Window;
 import android.widget.FrameLayout;
@@ -103,12 +104,9 @@ public class MainActivity extends AppCompatActivity {
                 mDatas.clear();
                 mAdapter.notifyDataSetChanged();
                 Intent intent = new Intent(MainActivity.this, CameraActivity.class);
-                intent.putExtra(CameraActivity.KEY_OUTPUT_FILE_PATH,
-                        FileUtil.getSaveFile(getApplication()).getAbsolutePath());
-                intent.putExtra(CameraActivity.KEY_CONTENT_TYPE,
-                        CameraActivity.CONTENT_TYPE_GENERAL);
+                intent.putExtra(CameraActivity.KEY_OUTPUT_FILE_PATH, FileUtil.getSaveFile(getApplication()).getAbsolutePath());
+                intent.putExtra(CameraActivity.KEY_CONTENT_TYPE, CameraActivity.CONTENT_TYPE_GENERAL);
                 startActivityForResult(intent, 105);
-
                 break;
 
             case R.id.mBtn_2:
@@ -182,11 +180,18 @@ public class MainActivity extends AppCompatActivity {
                             char c = sb.charAt(i);
 
                             if (isGB2312(String.valueOf(c))) {
+
                                 mDatas.add(String.valueOf(c));
                             }
                         }
 
+
                         Log.i("dd", "onResult: " + mDatas.toString());
+
+
+
+
+
                         gridLayoutManager = new GridLayoutManager(MainActivity.this, 3, GridLayoutManager.VERTICAL, false);
                         mRecyclerView.setLayoutManager(gridLayoutManager);
                         mRecyclerView.setAdapter(mAdapter);
@@ -391,5 +396,20 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+    private long exitTime = 0;
 
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        if(keyCode == KeyEvent.KEYCODE_BACK && event.getAction() == KeyEvent.ACTION_DOWN){
+            if((System.currentTimeMillis()-exitTime) > 2000){
+                Toast.makeText(getApplicationContext(), "再按一次退出程序", Toast.LENGTH_SHORT).show();
+                exitTime = System.currentTimeMillis();
+            } else {
+                finish();
+                System.exit(0);
+            }
+            return true;
+        }
+        return super.onKeyDown(keyCode, event);
+    }
 }

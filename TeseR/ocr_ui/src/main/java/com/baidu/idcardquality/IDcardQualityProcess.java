@@ -58,6 +58,7 @@ public class IDcardQualityProcess {
         return mAuthorityStatus == 0 ? this.idcardQualityCaptchaRelease() : mAuthorityStatus;
     }
 
+    //ID卡图片质量
     public int idcardQualityDetectionImg(Bitmap img, boolean isfont) {
         if (mAuthorityStatus == 0) {
             int imgHeight = img.getHeight();
@@ -73,6 +74,8 @@ public class IDcardQualityProcess {
         return loadNativeException;
     }
 
+
+    //获取图片的数据
     public byte[] getRGBImageData(Bitmap img) {
         int imgWidth = img.getWidth();
         int imgHeight = img.getHeight();

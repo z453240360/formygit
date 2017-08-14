@@ -260,13 +260,13 @@ public class CameraView extends FrameLayout {
 
         Rect previewFrame = cameraControl.getPreviewFrame();
 
-        int width = rotation % 180 == 0 ? decoder.getWidth() : decoder.getHeight();
+        int width = rotation % 180 == 0 ? decoder.getWidth(): decoder.getHeight();
         int height = rotation % 180 == 0 ? decoder.getHeight() : decoder.getWidth();
 
         Rect frameRect = maskView.getFrameRect();
 
-        int left = width * frameRect.left / maskView.getWidth();
-        int top = height * frameRect.top / maskView.getHeight();
+        int left = width * frameRect.left/ maskView.getWidth();
+        int top = height * frameRect.top/ maskView.getHeight();
         int right = width * frameRect.right / maskView.getWidth();
         int bottom = height * frameRect.bottom / maskView.getHeight();
 
@@ -330,7 +330,7 @@ public class CameraView extends FrameLayout {
 
         options.inSampleSize = ImageUtil.calculateInSampleSize(options, size, size);
         options.inScaled = true;
-        options.inDensity = Math.max(options.outWidth, options.outHeight);
+        options.inDensity = Math.max(options.outWidth/2, options.outHeight/2);
         options.inTargetDensity = size;
 
         Bitmap bitmap = decoder.decodeRegion(region, options);
@@ -577,7 +577,7 @@ public class CameraView extends FrameLayout {
             options.inSampleSize = ImageUtil.calculateInSampleSize(options, size, size);
             options.inScaled = true;
             options.inDensity = Math.max(options.outWidth, options.outHeight);
-            options.inTargetDensity = size;
+            options.inTargetDensity = size*2;
 
             Bitmap bitmap = decoder.decodeRegion(region, options);
 
@@ -654,7 +654,10 @@ public class CameraView extends FrameLayout {
                             @Override
                             public void run() {
                                 Bitmap bitmap = crop(file, tempFile, rotation);
-                                callback.onPictureTaken(bitmap);
+
+                                //传递出去图片对象
+                                Bitmap scaledBitmap = Bitmap.createScaledBitmap(bitmap, bitmap.getWidth() / 2, bitmap.getHeight() / 2, true);
+                                callback.onPictureTaken(scaledBitmap);
                                 boolean deleted = tempFile.delete();
                                 if (!deleted) {
                                     tempFile.deleteOnExit();
@@ -669,17 +672,5 @@ public class CameraView extends FrameLayout {
         }
     }
 
-//    @Override
-//    public boolean onTouchEvent(MotionEvent event) {
-//        Log.i("dd", "cameraView: ");
-////        return super.onTouchEvent(event);
-//        return true;
-//    }
-//
-//    @Override
-//    public boolean onInterceptTouchEvent(MotionEvent ev) {
-//        Log.i("dd", "onInterceptTouchEvent: ");
-////        return super.onInterceptTouchEvent(ev);
-//        return true;
-//    }
+
 }

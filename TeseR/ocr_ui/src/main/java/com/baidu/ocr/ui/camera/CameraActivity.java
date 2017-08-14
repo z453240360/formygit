@@ -39,6 +39,8 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import static android.R.attr.bitmap;
+
 public class CameraActivity extends Activity {
 
     public static final String KEY_OUTPUT_FILE_PATH = "outputFilePath";
@@ -73,7 +75,7 @@ public class CameraActivity extends Activity {
         @Override
         public boolean onRequestPermission() {
             ActivityCompat.requestPermissions(CameraActivity.this,
-                    new String[] {Manifest.permission.CAMERA},
+                    new String[]{Manifest.permission.CAMERA},
                     PERMISSIONS_REQUEST_CAMERA);
             return false;
         }
@@ -81,7 +83,7 @@ public class CameraActivity extends Activity {
 
     private float pict = 1.0f;
     private int count = 0;
-    private Button mBtn_cDa,mBtn_cXiao;
+    private Button mBtn_cDa, mBtn_cXiao;
     private ImageView mMyMaskView;
     private float picts;
 
@@ -110,6 +112,15 @@ public class CameraActivity extends Activity {
         findViewById(R.id.rotate_button).setOnClickListener(rotateButtonOnClickListener);
 
         cropView = (CropView) findViewById(R.id.crop_view);
+        /**
+         * 控制显示照片区域的显示。终于找到了
+         */
+//        AnimatorSet set1 = new AnimatorSet();
+//        set1.play(ObjectAnimator.ofFloat(cropView, "scaleX", 1.0f, 1.5f).setDuration(0))
+//                .with(ObjectAnimator.ofFloat(cropView, "scaleY", 1.0f, 1.5f).setDuration(0));
+//        set1.start();
+
+
         cropContainer = (OCRCameraLayout) findViewById(R.id.crop_container);
         overlayView = (FrameOverlayView) findViewById(R.id.overlay_view);
         cropContainer.findViewById(R.id.confirm_button).setOnClickListener(cropConfirmButtonListener);
@@ -131,15 +142,39 @@ public class CameraActivity extends Activity {
                     set1.play(ObjectAnimator.ofFloat(cameraView, "scaleX", 1.0f, 1.5f).setDuration(0))
                             .with(ObjectAnimator.ofFloat(cameraView, "scaleY", 1.0f, 1.5f).setDuration(0));
                     set1.start();
-                }else if (count==1){
+
+                    AnimatorSet set2 = new AnimatorSet();
+                    set2.play(ObjectAnimator.ofFloat(cropView, "scaleX", 1.0f, 1.5f).setDuration(0))
+                            .with(ObjectAnimator.ofFloat(cropView, "scaleY", 1.0f, 1.5f).setDuration(0));
+                    set2.start();
+
+//                    //框选缩小
+//                    AnimatorSet set3= new AnimatorSet();
+//                    set3.play(ObjectAnimator.ofFloat(overlayView, "scaleX", 1f, 0.75f).setDuration(0))
+//                            .with(ObjectAnimator.ofFloat(overlayView, "scaleY", 1f, 0.75f).setDuration(0));
+//                    set3.start();
+
+
+                } else if (count == 1) {
                     AnimatorSet set1 = new AnimatorSet();
                     set1.play(ObjectAnimator.ofFloat(cameraView, "scaleX", 1.0f, 2.0f).setDuration(0))
                             .with(ObjectAnimator.ofFloat(cameraView, "scaleY", 1.0f, 2.0f).setDuration(0));
                     set1.start();
+
+                    AnimatorSet set2 = new AnimatorSet();
+                    set2.play(ObjectAnimator.ofFloat(cropView, "scaleX", 1.0f, 2.0f).setDuration(0))
+                            .with(ObjectAnimator.ofFloat(cropView, "scaleY", 1.0f, 2.0f).setDuration(0));
+                    set2.start();
+
+
+//                    //框选缩小
+//                    AnimatorSet set3= new AnimatorSet();
+//                    set3.play(ObjectAnimator.ofFloat(overlayView, "scaleX", 0.75f, 0.25f).setDuration(0))
+//                            .with(ObjectAnimator.ofFloat(overlayView, "scaleY", 0.75f, 0.25f).setDuration(0));
+//                    set3.start();
                 }
             }
         });
-
 
 
         mBtn_cXiao = (Button) findViewById(R.id.mBtn_cXiao);
@@ -147,22 +182,45 @@ public class CameraActivity extends Activity {
             @Override
             public void onClick(View v) {
 
-                    if (count==1){
-                        count--;
-                        AnimatorSet set1 = new AnimatorSet();
-                        set1.play(ObjectAnimator.ofFloat(cameraView, "scaleX", 2.0f,1.5f).setDuration(0))
-                                .with(ObjectAnimator.ofFloat(cameraView, "scaleY", 2.0f,1.5f).setDuration(0));
-                        set1.start();
-                    }else if (count==0){
-                        AnimatorSet set1 = new AnimatorSet();
-                        set1.play(ObjectAnimator.ofFloat(cameraView, "scaleX", 1.5f,1.0f).setDuration(0))
-                                .with(ObjectAnimator.ofFloat(cameraView, "scaleY", 1.5f,1.0f).setDuration(0));
-                        set1.start();
-                    }
+                if (count == 1) {
+                    count--;
+                    AnimatorSet set1 = new AnimatorSet();
+                    set1.play(ObjectAnimator.ofFloat(cameraView, "scaleX", 2.0f, 1.5f).setDuration(0))
+                            .with(ObjectAnimator.ofFloat(cameraView, "scaleY", 2.0f, 1.5f).setDuration(0));
+                    set1.start();
+
+                    AnimatorSet set2 = new AnimatorSet();
+                    set2.play(ObjectAnimator.ofFloat(cropView, "scaleX", 2.0f, 1.5f).setDuration(0))
+                            .with(ObjectAnimator.ofFloat(cropView, "scaleY", 2.0f, 1.5f).setDuration(0));
+                    set2.start();
+//
+//                    //框选缩小
+//                    AnimatorSet set3= new AnimatorSet();
+//                    set3.play(ObjectAnimator.ofFloat(overlayView, "scaleX", 0.25f, 0.75f).setDuration(0))
+//                            .with(ObjectAnimator.ofFloat(overlayView, "scaleY", 0.25f, 0.75f).setDuration(0));
+//                    set3.start();
 
 
+                } else if (count == 0) {
+                    AnimatorSet set1 = new AnimatorSet();
+                    set1.play(ObjectAnimator.ofFloat(cameraView, "scaleX", 1.5f, 1.0f).setDuration(0))
+                            .with(ObjectAnimator.ofFloat(cameraView, "scaleY", 1.5f, 1.0f).setDuration(0));
+                    set1.start();
+
+                    AnimatorSet set2 = new AnimatorSet();
+                    set2.play(ObjectAnimator.ofFloat(cropView, "scaleX", 1.5f, 1.0f).setDuration(0))
+                            .with(ObjectAnimator.ofFloat(cropView, "scaleY", 1.5f, 1.0f).setDuration(0));
+                    set2.start();
 
 
+//                    //框选缩小
+//                    AnimatorSet set3= new AnimatorSet();
+//                    set3.play(ObjectAnimator.ofFloat(overlayView, "scaleX", 0.75f, 1f).setDuration(0))
+//                            .with(ObjectAnimator.ofFloat(overlayView, "scaleY", 0.75f, 1f).setDuration(0));
+//                    set3.start();
+
+
+                }
 
 
             }
@@ -224,8 +282,6 @@ public class CameraActivity extends Activity {
 
                 cropMaskView.setVisibility(View.INVISIBLE);
 
-
-
                 break;
         }
 
@@ -271,6 +327,14 @@ public class CameraActivity extends Activity {
         cameraView.getCameraControl().resume();
         updateFlashMode();
         takePictureContainer.setVisibility(View.VISIBLE);
+        mMyMaskView.setVisibility(View.VISIBLE);
+
+//            AnimatorSet set1 = new AnimatorSet();
+//            set1.play(ObjectAnimator.ofFloat(takePictureContainer, "scaleX", 1.0f,2.0f).setDuration(0))
+//                    .with(ObjectAnimator.ofFloat(takePictureContainer, "scaleY", 1.0f,2.0f).setDuration(0));
+//            set1.start();
+
+
         confirmResultContainer.setVisibility(View.INVISIBLE);
         cropContainer.setVisibility(View.INVISIBLE);
     }
@@ -309,7 +373,7 @@ public class CameraActivity extends Activity {
                     != PackageManager.PERMISSION_GRANTED) {
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
                     ActivityCompat.requestPermissions(CameraActivity.this,
-                            new String[] {Manifest.permission.READ_EXTERNAL_STORAGE},
+                            new String[]{Manifest.permission.READ_EXTERNAL_STORAGE},
                             PERMISSIONS_EXTERNAL_STORAGE);
                     return;
                 }
@@ -335,6 +399,7 @@ public class CameraActivity extends Activity {
     private View.OnClickListener takeButtonOnClickListener = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
+            mMyMaskView.setVisibility(View.INVISIBLE);
             cameraView.takePicture(outputFile, takePictureCallback);
         }
     };
@@ -342,6 +407,9 @@ public class CameraActivity extends Activity {
     private CameraView.OnTakePictureCallback autoTakePictureCallback = new CameraView.OnTakePictureCallback() {
         @Override
         public void onPictureTaken(final Bitmap bitmap) {
+
+            mMyMaskView.setVisibility(View.INVISIBLE);
+
             new Thread() {
                 @Override
                 public void run() {
@@ -392,6 +460,7 @@ public class CameraActivity extends Activity {
     private View.OnClickListener cropCancelButtonListener = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
+            mMyMaskView.setVisibility(View.INVISIBLE);
             // 释放 cropView中的bitmap;
             cropView.setFilePath(null);
             showTakePicture();
@@ -414,8 +483,20 @@ public class CameraActivity extends Activity {
                     rect = overlayView.getFrameRect();
                     break;
             }
-            Bitmap cropped = cropView.crop(rect);
-            displayImageView.setImageBitmap(cropped);
+            if (count == 0) {
+                Bitmap cropped = cropView.crop(rect, 1.5f);
+                mMyMaskView.setVisibility(View.INVISIBLE);
+                displayImageView.setImageBitmap(cropped);
+            } else if (count == 1) {
+                Bitmap cropped = cropView.crop(rect, 2f);
+                mMyMaskView.setVisibility(View.INVISIBLE);
+                displayImageView.setImageBitmap(cropped);
+            } else {
+                Bitmap cropped = cropView.crop(rect, 0);
+                mMyMaskView.setVisibility(View.INVISIBLE);
+                displayImageView.setImageBitmap(cropped);
+            }
+
             cropAndConfirm();
         }
     };
@@ -430,12 +511,14 @@ public class CameraActivity extends Activity {
     private View.OnClickListener closeButtonOnClickListener = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
+            mMyMaskView.setVisibility(View.INVISIBLE);
             setResult(Activity.RESULT_CANCELED);
             finish();
         }
     };
 
     private void doConfirmResult() {
+        mMyMaskView.setVisibility(View.INVISIBLE);
         new Thread() {
             @Override
             public void run() {
@@ -460,7 +543,7 @@ public class CameraActivity extends Activity {
     private View.OnClickListener confirmButtonOnClickListener = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-            mMyMaskView.setVisibility(View.VISIBLE);
+            mMyMaskView.setVisibility(View.INVISIBLE);
             doConfirmResult();
         }
     };
@@ -470,6 +553,7 @@ public class CameraActivity extends Activity {
         public void onClick(View v) {
             mMyMaskView.setVisibility(View.VISIBLE);
             displayImageView.setImageBitmap(null);
+//            mMyMaskView.setVisibility(View.VISIBLE);
             showTakePicture();
         }
     };
@@ -477,6 +561,7 @@ public class CameraActivity extends Activity {
     private View.OnClickListener rotateButtonOnClickListener = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
+            mMyMaskView.setVisibility(View.INVISIBLE);
             cropView.rotate(90);
         }
     };
