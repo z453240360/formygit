@@ -483,16 +483,17 @@ public class CameraActivity extends Activity {
                     rect = overlayView.getFrameRect();
                     break;
             }
+
             if (count == 0) {
                 Bitmap cropped = cropView.crop(rect, 1.5f);
                 mMyMaskView.setVisibility(View.INVISIBLE);
                 displayImageView.setImageBitmap(cropped);
             } else if (count == 1) {
-                Bitmap cropped = cropView.crop(rect, 2f);
+                Bitmap cropped = cropView.crop(rect, 2.0f);
                 mMyMaskView.setVisibility(View.INVISIBLE);
                 displayImageView.setImageBitmap(cropped);
             } else {
-                Bitmap cropped = cropView.crop(rect, 0);
+                Bitmap cropped = cropView.crop(rect, 0f);
                 mMyMaskView.setVisibility(View.INVISIBLE);
                 displayImageView.setImageBitmap(cropped);
             }

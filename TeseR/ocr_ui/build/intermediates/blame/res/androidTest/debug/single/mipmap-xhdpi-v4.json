@@ -1,14 +1,14 @@
 [
     {
-        "merged": "D:\\Documents\\formygit\\TeseR\\ocr_ui\\build\\intermediates\\res\\merged\\androidTest\\debug\\mipmap-xhdpi-v4\\ic_launcher.png",
-        "source": "D:\\Documents\\formygit\\TeseR\\ocr_ui\\build\\intermediates\\bundles\\debug\\res\\mipmap-xhdpi-v4\\ic_launcher.png"
+        "merged": "C:\\Users\\dongdong\\Documents\\formygit\\TeseR\\ocr_ui\\build\\intermediates\\res\\merged\\androidTest\\debug\\mipmap-xhdpi-v4\\background.png",
+        "source": "C:\\Users\\dongdong\\Documents\\formygit\\TeseR\\ocr_ui\\build\\intermediates\\bundles\\debug\\res\\mipmap-xhdpi-v4\\background.png"
     },
     {
-        "merged": "D:\\Documents\\formygit\\TeseR\\ocr_ui\\build\\intermediates\\res\\merged\\androidTest\\debug\\mipmap-xhdpi-v4\\background.png",
-        "source": "D:\\Documents\\formygit\\TeseR\\ocr_ui\\build\\intermediates\\bundles\\debug\\res\\mipmap-xhdpi-v4\\background.png"
+        "merged": "C:\\Users\\dongdong\\Documents\\formygit\\TeseR\\ocr_ui\\build\\intermediates\\res\\merged\\androidTest\\debug\\mipmap-xhdpi-v4\\tongchuang.jpg",
+        "source": "C:\\Users\\dongdong\\Documents\\formygit\\TeseR\\ocr_ui\\build\\intermediates\\bundles\\debug\\res\\mipmap-xhdpi-v4\\tongchuang.jpg"
     },
     {
-        "merged": "D:\\Documents\\formygit\\TeseR\\ocr_ui\\build\\intermediates\\res\\merged\\androidTest\\debug\\mipmap-xhdpi-v4\\tongchuang.jpg",
-        "source": "D:\\Documents\\formygit\\TeseR\\ocr_ui\\build\\intermediates\\bundles\\debug\\res\\mipmap-xhdpi-v4\\tongchuang.jpg"
+        "merged": "C:\\Users\\dongdong\\Documents\\formygit\\TeseR\\ocr_ui\\build\\intermediates\\res\\merged\\androidTest\\debug\\mipmap-xhdpi-v4\\ic_launcher.png",
+        "source": "C:\\Users\\dongdong\\Documents\\formygit\\TeseR\\ocr_ui\\build\\intermediates\\bundles\\debug\\res\\mipmap-xhdpi-v4\\ic_launcher.png"
     }
 ]
