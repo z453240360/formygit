@@ -186,7 +186,6 @@ public class MainActivity extends AppCompatActivity {
                         }
 
 
-                        Log.i("dd", "onResult: " + mDatas.toString());
 
 
 
