@@ -117,8 +117,6 @@ public class CropView extends View {
         int height = (int) (frame.height() / scale);
 
         Bitmap bitmap = Bitmap.createBitmap((int)width, (int)height, Bitmap.Config.RGB_565);
-
-
         canvas = new Canvas(bitmap);
         Bitmap originalBitmap = this.bitmap;
         matrix.postTranslate(-desc[0], -desc[1]);

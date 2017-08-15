@@ -4,12 +4,12 @@
         "source": "D:\\Documents\\formygit\\TeseR\\ocr_ui\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.1.1\\res\\layout\\abc_list_menu_item_checkbox.xml"
     },
     {
-        "merged": "D:\\Documents\\formygit\\TeseR\\ocr_ui\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_menu_layout.xml",
-        "source": "D:\\Documents\\formygit\\TeseR\\ocr_ui\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.1.1\\res\\layout\\abc_action_menu_layout.xml"
-    },
-    {
         "merged": "D:\\Documents\\formygit\\TeseR\\ocr_ui\\build\\intermediates\\res\\merged\\debug\\layout\\abc_screen_simple_overlay_action_mode.xml",
         "source": "D:\\Documents\\formygit\\TeseR\\ocr_ui\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.1.1\\res\\layout\\abc_screen_simple_overlay_action_mode.xml"
+    },
+    {
+        "merged": "D:\\Documents\\formygit\\TeseR\\ocr_ui\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_menu_layout.xml",
+        "source": "D:\\Documents\\formygit\\TeseR\\ocr_ui\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.1.1\\res\\layout\\abc_action_menu_layout.xml"
     },
     {
         "merged": "D:\\Documents\\formygit\\TeseR\\ocr_ui\\build\\intermediates\\res\\merged\\debug\\layout\\abc_screen_toolbar.xml",

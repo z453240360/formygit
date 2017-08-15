@@ -30,29 +30,26 @@
     <ImageView
         android:id="@+id/mMyMaskView"
         android:layout_centerHorizontal="true"
-        android:layout_above="@id/confirm_result_container"
-        android:layout_marginTop="110dp"
+        android:layout_marginTop="100dp"
         android:src="@drawable/biankuang"
-        android:layout_width="230dp"
-        android:layout_height="290dp" />
-
-
-
-
+        android:layout_width="220dp"
+        android:layout_height="280dp" />
 
     <Button
         android:id="@+id/mBtn_cDa"
-        android:background="@drawable/jia"
-        android:layout_centerInParent="true"
+        android:background="@drawable/jia2"
         android:layout_alignParentRight="true"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="180dp"
         android:layout_width="40dp"
         android:layout_height="40dp" />
 
     <Button
         android:layout_below="@id/mBtn_cDa"
         android:id="@+id/mBtn_cXiao"
-        android:background="@drawable/jian"
+        android:background="@drawable/jian2"
         android:layout_marginTop="20dp"
+        android:layout_marginRight="5dp"
         android:layout_centerInParent="true"
         android:layout_alignParentRight="true"
         android:layout_width="40dp"

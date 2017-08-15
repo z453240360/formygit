@@ -1,7 +1,9 @@
 package com.example.administrator.teser;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.graphics.Color;
 import android.os.SystemClock;
@@ -80,7 +82,8 @@ public class MainActivity extends AppCompatActivity {
     private ImageView mBtn_second, img1, img2;
     private SpeechSynthesizer ss;
     private HashMap<String, Integer> map;
-
+    private SharedPreferences sharedPreferences;
+    private String postion;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -88,6 +91,9 @@ public class MainActivity extends AppCompatActivity {
         ColorState.setWindowStatusBarColor(this, Color.BLACK);
         supportRequestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_main);
+        sharedPreferences = getSharedPreferences("yls", Context.MODE_PRIVATE);
+
+
 
         SpeechUtility.createUtility(this, SpeechConstant.APPID + "=59658cec");
         myrl = (RelativeLayout) findViewById(R.id.myrl);
@@ -176,20 +182,31 @@ public class MainActivity extends AppCompatActivity {
                             sb.append(wordSimple);
                         }
 
+                        postion = sharedPreferences.getString("postions", "huifulema");
+
                         for (int i = 0; i < sb.length(); i++) {
                             char c = sb.charAt(i);
 
                             if (isGB2312(String.valueOf(c))) {
 
-                                mDatas.add(String.valueOf(c));
+                                if (postion.equals("suofang")){
+
+                                    if (i >= 6) {
+                                        int pos = (int) i / 3;
+                                        int pos2 = (int) i * 2 / 3;
+                                        if (i > pos && i < pos2) {
+                                            mDatas.add(String.valueOf(c));
+                                        }
+                                    }else {
+                                        mDatas.add(String.valueOf(c));
+                                    }
+
+                                }else {
+                                    mDatas.add(String.valueOf(c));
+                                }
+
                             }
                         }
-
-
-
-
-
-
 
                         gridLayoutManager = new GridLayoutManager(MainActivity.this, 3, GridLayoutManager.VERTICAL, false);
                         mRecyclerView.setLayoutManager(gridLayoutManager);
@@ -302,16 +319,16 @@ public class MainActivity extends AppCompatActivity {
                     String xiangJie = GsonResult.getXiangJie(s);
                     StringBuffer b = new StringBuffer();
                     String[] split = pinYin.split(",");
-                    String s78=null;
+                    String s78 = null;
 
                     for (int i = 0; i < split.length; i++) {
 
                         String s1 = split[i].toString();
 
-                        s78 = b.append(s1+"\n").toString();
+                        s78 = b.append(s1 + "\n").toString();
                     }
 
-                    Log.i("dd", "onResponse: "+s78);
+                    Log.i("dd", "onResponse: " + s78);
 
                     mTxt1.setText(zi);
                     mTxt2.setText(b.toString());
@@ -337,7 +354,7 @@ public class MainActivity extends AppCompatActivity {
             public void onResult(AccessToken result) {
                 // 调用成功，返回AccessToken对象
                 String token = result.getAccessToken();
-                Log.i("dd", "onResult: "+token);
+                Log.i("dd", "onResult: " + token);
             }
 
             @Override
@@ -399,8 +416,8 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
-        if(keyCode == KeyEvent.KEYCODE_BACK && event.getAction() == KeyEvent.ACTION_DOWN){
-            if((System.currentTimeMillis()-exitTime) > 2000){
+        if (keyCode == KeyEvent.KEYCODE_BACK && event.getAction() == KeyEvent.ACTION_DOWN) {
+            if ((System.currentTimeMillis() - exitTime) > 2000) {
                 Toast.makeText(getApplicationContext(), "再按一次退出程序", Toast.LENGTH_SHORT).show();
                 exitTime = System.currentTimeMillis();
             } else {

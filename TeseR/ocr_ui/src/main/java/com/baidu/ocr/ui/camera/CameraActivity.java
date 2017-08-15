@@ -17,7 +17,9 @@ import android.animation.Animator;
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.content.res.Configuration;
 import android.database.Cursor;
@@ -40,6 +42,7 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import static android.R.attr.bitmap;
+import static com.baidu.idl.license.License.TAG;
 
 public class CameraActivity extends Activity {
 
@@ -86,6 +89,8 @@ public class CameraActivity extends Activity {
     private Button mBtn_cDa, mBtn_cXiao;
     private ImageView mMyMaskView;
     private float picts;
+    private SharedPreferences sharedPreferences;
+    private SharedPreferences.Editor editor;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -110,6 +115,11 @@ public class CameraActivity extends Activity {
         confirmResultContainer.findViewById(R.id.confirm_button).setOnClickListener(confirmButtonOnClickListener);
         confirmResultContainer.findViewById(R.id.cancel_button).setOnClickListener(confirmCancelButtonOnClickListener);
         findViewById(R.id.rotate_button).setOnClickListener(rotateButtonOnClickListener);
+
+        sharedPreferences = getSharedPreferences("yls", Context.MODE_PRIVATE);
+        editor = sharedPreferences.edit();
+        editor.clear().commit();
+
 
         cropView = (CropView) findViewById(R.id.crop_view);
         /**
@@ -138,6 +148,12 @@ public class CameraActivity extends Activity {
             public void onClick(View v) {
                 if (count == 0) {
                     count++;
+
+
+                    editor.putString("postions","suofang");
+                    editor.commit();
+
+                    Log.i("dd", "onClick:####"+sharedPreferences.getString("postion","dd"));
                     AnimatorSet set1 = new AnimatorSet();
                     set1.play(ObjectAnimator.ofFloat(cameraView, "scaleX", 1.0f, 1.5f).setDuration(0))
                             .with(ObjectAnimator.ofFloat(cameraView, "scaleY", 1.0f, 1.5f).setDuration(0));
@@ -147,13 +163,6 @@ public class CameraActivity extends Activity {
                     set2.play(ObjectAnimator.ofFloat(cropView, "scaleX", 1.0f, 1.5f).setDuration(0))
                             .with(ObjectAnimator.ofFloat(cropView, "scaleY", 1.0f, 1.5f).setDuration(0));
                     set2.start();
-
-//                    //框选缩小
-//                    AnimatorSet set3= new AnimatorSet();
-//                    set3.play(ObjectAnimator.ofFloat(overlayView, "scaleX", 1f, 0.75f).setDuration(0))
-//                            .with(ObjectAnimator.ofFloat(overlayView, "scaleY", 1f, 0.75f).setDuration(0));
-//                    set3.start();
-
 
                 } else if (count == 1) {
                     AnimatorSet set1 = new AnimatorSet();
@@ -165,13 +174,6 @@ public class CameraActivity extends Activity {
                     set2.play(ObjectAnimator.ofFloat(cropView, "scaleX", 1.0f, 2.0f).setDuration(0))
                             .with(ObjectAnimator.ofFloat(cropView, "scaleY", 1.0f, 2.0f).setDuration(0));
                     set2.start();
-
-
-//                    //框选缩小
-//                    AnimatorSet set3= new AnimatorSet();
-//                    set3.play(ObjectAnimator.ofFloat(overlayView, "scaleX", 0.75f, 0.25f).setDuration(0))
-//                            .with(ObjectAnimator.ofFloat(overlayView, "scaleY", 0.75f, 0.25f).setDuration(0));
-//                    set3.start();
                 }
             }
         });
@@ -193,15 +195,12 @@ public class CameraActivity extends Activity {
                     set2.play(ObjectAnimator.ofFloat(cropView, "scaleX", 2.0f, 1.5f).setDuration(0))
                             .with(ObjectAnimator.ofFloat(cropView, "scaleY", 2.0f, 1.5f).setDuration(0));
                     set2.start();
-//
-//                    //框选缩小
-//                    AnimatorSet set3= new AnimatorSet();
-//                    set3.play(ObjectAnimator.ofFloat(overlayView, "scaleX", 0.25f, 0.75f).setDuration(0))
-//                            .with(ObjectAnimator.ofFloat(overlayView, "scaleY", 0.25f, 0.75f).setDuration(0));
-//                    set3.start();
 
 
                 } else if (count == 0) {
+
+                    editor.putString("postions","huifule");
+                    editor.commit();
                     AnimatorSet set1 = new AnimatorSet();
                     set1.play(ObjectAnimator.ofFloat(cameraView, "scaleX", 1.5f, 1.0f).setDuration(0))
                             .with(ObjectAnimator.ofFloat(cameraView, "scaleY", 1.5f, 1.0f).setDuration(0));
@@ -211,14 +210,6 @@ public class CameraActivity extends Activity {
                     set2.play(ObjectAnimator.ofFloat(cropView, "scaleX", 1.5f, 1.0f).setDuration(0))
                             .with(ObjectAnimator.ofFloat(cropView, "scaleY", 1.5f, 1.0f).setDuration(0));
                     set2.start();
-
-
-//                    //框选缩小
-//                    AnimatorSet set3= new AnimatorSet();
-//                    set3.play(ObjectAnimator.ofFloat(overlayView, "scaleX", 0.75f, 1f).setDuration(0))
-//                            .with(ObjectAnimator.ofFloat(overlayView, "scaleY", 0.75f, 1f).setDuration(0));
-//                    set3.start();
-
 
                 }
 
