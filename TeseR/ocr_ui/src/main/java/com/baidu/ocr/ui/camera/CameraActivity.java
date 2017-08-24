@@ -88,9 +88,6 @@ public class CameraActivity extends Activity {
     private int count = 0;
     private Button mBtn_cDa, mBtn_cXiao;
     private ImageView mMyMaskView;
-    private float picts;
-    private SharedPreferences sharedPreferences;
-    private SharedPreferences.Editor editor;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -115,11 +112,6 @@ public class CameraActivity extends Activity {
         confirmResultContainer.findViewById(R.id.confirm_button).setOnClickListener(confirmButtonOnClickListener);
         confirmResultContainer.findViewById(R.id.cancel_button).setOnClickListener(confirmCancelButtonOnClickListener);
         findViewById(R.id.rotate_button).setOnClickListener(rotateButtonOnClickListener);
-
-        sharedPreferences = getSharedPreferences("yls", Context.MODE_PRIVATE);
-        editor = sharedPreferences.edit();
-        editor.clear().commit();
-
 
         cropView = (CropView) findViewById(R.id.crop_view);
         /**
@@ -150,10 +142,7 @@ public class CameraActivity extends Activity {
                     count++;
 
 
-                    editor.putString("postions","suofang");
-                    editor.commit();
 
-                    Log.i("dd", "onClick:####"+sharedPreferences.getString("postion","dd"));
                     AnimatorSet set1 = new AnimatorSet();
                     set1.play(ObjectAnimator.ofFloat(cameraView, "scaleX", 1.0f, 1.5f).setDuration(0))
                             .with(ObjectAnimator.ofFloat(cameraView, "scaleY", 1.0f, 1.5f).setDuration(0));
@@ -199,8 +188,6 @@ public class CameraActivity extends Activity {
 
                 } else if (count == 0) {
 
-                    editor.putString("postions","huifule");
-                    editor.commit();
                     AnimatorSet set1 = new AnimatorSet();
                     set1.play(ObjectAnimator.ofFloat(cameraView, "scaleX", 1.5f, 1.0f).setDuration(0))
                             .with(ObjectAnimator.ofFloat(cameraView, "scaleY", 1.5f, 1.0f).setDuration(0));
@@ -474,16 +461,17 @@ public class CameraActivity extends Activity {
                     rect = overlayView.getFrameRect();
                     break;
             }
+
             if (count == 0) {
                 Bitmap cropped = cropView.crop(rect, 1.5f);
                 mMyMaskView.setVisibility(View.INVISIBLE);
                 displayImageView.setImageBitmap(cropped);
             } else if (count == 1) {
-                Bitmap cropped = cropView.crop(rect, 2f);
+                Bitmap cropped = cropView.crop(rect, 2.0f);
                 mMyMaskView.setVisibility(View.INVISIBLE);
                 displayImageView.setImageBitmap(cropped);
             } else {
-                Bitmap cropped = cropView.crop(rect, 0);
+                Bitmap cropped = cropView.crop(rect, 0f);
                 mMyMaskView.setVisibility(View.INVISIBLE);
                 displayImageView.setImageBitmap(cropped);
             }

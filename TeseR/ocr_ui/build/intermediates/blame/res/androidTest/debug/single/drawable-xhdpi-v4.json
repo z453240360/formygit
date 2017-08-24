@@ -64,12 +64,12 @@
         "source": "D:\\Documents\\formygit\\TeseR\\ocr_ui\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.1.1\\res\\drawable-xhdpi-v4\\abc_textfield_search_default_mtrl_alpha.9.png"
     },
     {
-        "merged": "D:\\Documents\\formygit\\TeseR\\ocr_ui\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\notification_bg_low_pressed.9.png",
-        "source": "D:\\Documents\\formygit\\TeseR\\ocr_ui\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.1.1\\res\\drawable-xhdpi-v4\\notification_bg_low_pressed.9.png"
-    },
-    {
         "merged": "D:\\Documents\\formygit\\TeseR\\ocr_ui\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\bd_ocr_hint_align_id_card.png",
         "source": "D:\\Documents\\formygit\\TeseR\\ocr_ui\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\bd_ocr_hint_align_id_card.png"
+    },
+    {
+        "merged": "D:\\Documents\\formygit\\TeseR\\ocr_ui\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\notification_bg_low_pressed.9.png",
+        "source": "D:\\Documents\\formygit\\TeseR\\ocr_ui\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.1.1\\res\\drawable-xhdpi-v4\\notification_bg_low_pressed.9.png"
     },
     {
         "merged": "D:\\Documents\\formygit\\TeseR\\ocr_ui\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\abc_popup_background_mtrl_mult.9.png",

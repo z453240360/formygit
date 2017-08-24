@@ -74,8 +74,6 @@ public class MainActivity extends AppCompatActivity {
     private File file = null;
     private ImageView mImg1, mImg2;
     private RelativeLayout myrl;
-    private int up = 1;
-    private int down = 1;
     private int pos = 1;
     private TextView mTxt1, mTxt2, mTxt3, mTxt4;
 
@@ -91,10 +89,9 @@ public class MainActivity extends AppCompatActivity {
         ColorState.setWindowStatusBarColor(this, Color.BLACK);
         supportRequestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_main);
-        sharedPreferences = getSharedPreferences("yls", Context.MODE_PRIVATE);
 
 
-
+        postion = "ss";
         SpeechUtility.createUtility(this, SpeechConstant.APPID + "=59658cec");
         myrl = (RelativeLayout) findViewById(R.id.myrl);
         initView();
@@ -108,6 +105,7 @@ public class MainActivity extends AppCompatActivity {
             case R.id.general_button:
 
                 mDatas.clear();
+                myrl.setVisibility(View.INVISIBLE);
                 mAdapter.notifyDataSetChanged();
                 Intent intent = new Intent(MainActivity.this, CameraActivity.class);
                 intent.putExtra(CameraActivity.KEY_OUTPUT_FILE_PATH, FileUtil.getSaveFile(getApplication()).getAbsolutePath());
@@ -182,7 +180,6 @@ public class MainActivity extends AppCompatActivity {
                             sb.append(wordSimple);
                         }
 
-                        postion = sharedPreferences.getString("postions", "huifulema");
 
                         for (int i = 0; i < sb.length(); i++) {
                             char c = sb.charAt(i);
@@ -191,7 +188,7 @@ public class MainActivity extends AppCompatActivity {
 
                                 if (postion.equals("suofang")){
 
-                                    if (i >= 6) {
+                                    if (i >= 5) {
                                         int pos = (int) i / 3;
                                         int pos2 = (int) i * 2 / 3;
                                         if (i > pos && i < pos2) {
@@ -311,24 +308,23 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
 
+
+                if (response.code()!=200){
+                    return;
+                }
                 try {
                     String s = response.body().string().toString();
 
+                    Log.i("dd", "onResponse: "+s);
                     String zi = GsonResult.getZi(s);
                     String pinYin = GsonResult.getPinYin(s);
                     String xiangJie = GsonResult.getXiangJie(s);
                     StringBuffer b = new StringBuffer();
+
                     String[] split = pinYin.split(",");
-                    String s78 = null;
-
                     for (int i = 0; i < split.length; i++) {
-
-                        String s1 = split[i].toString();
-
-                        s78 = b.append(s1 + "\n").toString();
+                        b.append(split[i]+"\n");
                     }
-
-                    Log.i("dd", "onResponse: " + s78);
 
                     mTxt1.setText(zi);
                     mTxt2.setText(b.toString());
