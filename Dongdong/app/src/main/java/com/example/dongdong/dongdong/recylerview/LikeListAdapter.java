@@ -65,9 +65,6 @@ public class LikeListAdapter extends RecyclerView.Adapter<LikeListAdapter.MyView
         });
         holder.tv_test.setText(holder.checkBox.isChecked()+"");
 
-
-
-
     }
 
 
