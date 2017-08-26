@@ -131,7 +131,6 @@ public class MainActivity extends AppCompatActivity {
                 if (pos > 0 && pos < mDatas.size()) {
                     String s3 = mDatas.get(pos);
                     initData(s3);
-
                 }
 
                 break;

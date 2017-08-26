@@ -29,7 +29,7 @@
         app:layout_marginTopPercent="20%"
         app:layout_marginLeftPercent="22%"
         app:layout_widthPercent="55%"
-        android:src="@mipmap/tc"/>
+        android:src="@mipmap/tcyp"/>
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/recycler_view"
