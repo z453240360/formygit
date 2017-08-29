@@ -62,6 +62,10 @@ public class MyFragment extends Fragment {
         button1.setText(msg);
     }
 
+
+
+
+
     @Override
     public void onDestroy() {
         super.onDestroy();
