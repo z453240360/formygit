@@ -21,6 +21,6 @@ public interface Constant {
     String APPKEY_BAIDU = "PBvXYuZkhPtYBnHHMPZHUEEg";
     String APP_SECRET_BAIDU = "Ar3kpUYq3crp9M9w7GFh6jWk5oHMxlRs";
     String BASE_BAIDUURL ="https://aip.baidubce.com/";
-
+    String OCT = "rest/2.0/ocr/v1/general_basic"; //通用文字识别
 
 }

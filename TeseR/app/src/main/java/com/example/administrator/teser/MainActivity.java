@@ -228,8 +228,6 @@ public class MainActivity extends AppCompatActivity {
                         // 调用失败，返回OCRError对象
                     }
                 });
-
-
             }
         }
 
